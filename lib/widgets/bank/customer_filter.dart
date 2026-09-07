@@ -44,15 +44,6 @@ class CustomerFilter extends StatelessWidget {
           // Row 1: Customer ID + Loan Status
           Row(
             children: [
-              const SizedBox(
-                width: 100,
-                child: Text('Customer ID: ',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
@@ -72,15 +63,6 @@ class CustomerFilter extends StatelessWidget {
               ),
               const SizedBox(width: 12),
 
-              const SizedBox(
-                width: 100,
-                child: Text('Loan Status: ',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
@@ -92,7 +74,7 @@ class CustomerFilter extends StatelessWidget {
                       labelStyle: TextStyle(fontSize: _fontSize),
                       border: OutlineInputBorder(),
                       isDense: true,
-                      contentPadding: EdgeInsets.symmetric(horizontal: 1, vertical: 8),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     ),
                     items: statusOptions
                         .map((s) => DropdownMenuItem(value: s, child: Text(s)))
@@ -108,13 +90,6 @@ class CustomerFilter extends StatelessWidget {
           // Row 2: From Date + To Date
           Row(
             children: [
-              const SizedBox(
-                width: 100,
-                child: Text(
-                  'From Date: ',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                ),
-              ),
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
@@ -133,13 +108,6 @@ class CustomerFilter extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               
-              const SizedBox(
-                width: 100,
-                child: Text(
-                  'To Date:',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                ),
-              ),
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
@@ -162,40 +130,29 @@ class CustomerFilter extends StatelessWidget {
 
           // Row 3: Search + Clear
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                width: 260,
-                height: 44,
-                child: ElevatedButton(
-                  onPressed: onSearch,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[700],
-                    foregroundColor: Colors.white,
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Search'),
-                      SizedBox(width: 8),
-                      Icon(Icons.search, size: 18),
-                    ],
+              Expanded(
+                child: SizedBox(
+                  height: _fieldHeight,
+                  child: ElevatedButton.icon(
+                    onPressed: onSearch,
+                    icon: const Icon(Icons.search, size: 16),
+                    label: const Text('Search', style: TextStyle(fontSize: _fontSize)),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue[700],
+                      foregroundColor: Colors.white,
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(width: 30),
-              SizedBox(
-                width: 260,
-                height: 44,
-                child: OutlinedButton(
-                  onPressed: onClear,
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Clear',),
-                      SizedBox(width: 8),
-                      Icon(Icons.clear, size: 18),
-                    ],
+              const SizedBox(width: 12),
+              Expanded(
+                child: SizedBox(
+                  height: _fieldHeight,
+                  child: OutlinedButton.icon(
+                    onPressed: onClear,
+                    icon: const Icon(Icons.clear, size: 16),
+                    label: const Text('Clear', style: TextStyle(fontSize: _fontSize)),
                   ),
                 ),
               ),

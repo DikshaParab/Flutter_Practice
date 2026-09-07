@@ -32,6 +32,7 @@ class _LoginPageAppState extends State<LoginPageApp> {
   void dispose() {
     _usernameController.dispose();
     _passwordController.dispose();
+    _captchaController.dispose();
     super.dispose();
   }
 

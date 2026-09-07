@@ -35,7 +35,7 @@ class CustomerFilter extends StatelessWidget {
   final bool canExportAll;
 
   String _formatDate(DateTime? date) {
-    if (date == null) return 'Select date';
+    if (date == null) return '';
     return '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
   }
 
@@ -100,23 +100,23 @@ class CustomerFilter extends StatelessWidget {
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
-                  child: OutlinedButton(
-                    onPressed: onFromDateTap,
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'From: ${_formatDate(fromDate)}',
-                            style: const TextStyle(fontSize: _fontSize),
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Icon(Icons.calendar_today, size: 14),
-                      ],
+                  child: TextFormField(
+                    key: ValueKey('from-$fromDate'),
+                    readOnly: true,
+                    initialValue: _formatDate(fromDate),
+                    onTap: onFromDateTap,
+                    style: const TextStyle(fontSize: _fontSize),
+                    decoration: const InputDecoration(
+                      labelText: 'From Date',
+                      labelStyle: TextStyle(fontSize: _fontSize),
+                      hintText: 'yyyy-mm-dd',
+                      hintStyle: TextStyle(fontSize: _fontSize),
+                      hintTextDirection: TextDirection.ltr,
+                      suffixIcon: Icon(Icons.calendar_today, size: 14),
+                      suffixIconConstraints: BoxConstraints(minWidth: 36, minHeight: 36),
+                      border: OutlineInputBorder(),
+                      isDense: true,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 14),
                     ),
                   ),
                 ),
@@ -126,23 +126,22 @@ class CustomerFilter extends StatelessWidget {
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
-                  child: OutlinedButton(
-                    onPressed: onToDateTap,
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'To: ${_formatDate(toDate)}',
-                            style: const TextStyle(fontSize: _fontSize),
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Icon(Icons.calendar_today, size: 14),
-                      ],
+                  child: TextFormField(
+                    key: ValueKey('to-$toDate'),
+                    readOnly: true,
+                    initialValue: _formatDate(toDate),
+                    onTap: onToDateTap,
+                    style: const TextStyle(fontSize: _fontSize),
+                    decoration: const InputDecoration(
+                      labelText: 'To Date',
+                      labelStyle: TextStyle(fontSize: _fontSize),
+                      hintText: 'yyyy-mm-dd',
+                      hintStyle: TextStyle(fontSize: _fontSize),
+                      suffixIcon: Icon(Icons.calendar_today, size: 14),
+                      suffixIconConstraints: BoxConstraints(minWidth: 36, minHeight: 36),
+                      border: OutlineInputBorder(),
+                      isDense: true,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 14),
                     ),
                   ),
                 ),
@@ -151,7 +150,7 @@ class CustomerFilter extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-          // Row 2: Search, Clear, Export Page, Export All
+          // Row 2: Search, Clear, Export, Export All
           Row(
             children: [
               Expanded(

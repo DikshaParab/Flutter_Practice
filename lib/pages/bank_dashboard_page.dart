@@ -1,0 +1,83 @@
+import 'package:flutter/material.dart';
+import 'package:demo/widgets/my_app_bar.dart';
+import 'package:demo/widgets/logout_button.dart';
+import 'package:demo/widgets/bank/dashboard_card.dart';
+import 'package:demo/pages/login_page.dart';
+import 'package:demo/pages/bank_home_page.dart';
+
+class BankDashboardPage extends StatelessWidget {
+  const BankDashboardPage({super.key, required this.username});
+  final String username;
+
+  String _capitalizeFirstLetter(String value) {
+    if (value.isEmpty) return value;
+    return '${value[0].toUpperCase()}${value.substring(1)}';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56),
+        child: MyAppBar(
+          title: const Text(''),
+          action: LogoutButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginPageApp()),
+              );
+            },
+          ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Welcome, ${_capitalizeFirstLetter(username)}!',
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 24),
+            Expanded(
+              child: GridView(
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 260,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                  childAspectRatio: 1.2,
+                ),
+                children: [
+                  DashboardCard(
+                    title: 'Customer Records',
+                    subtitle: 'View and filter loan applications',
+                    icon: Icons.people_outline,
+                    color: Colors.blue[700]!,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomePage(username: username),
+                        ),
+                      );
+                    },
+                  ),
+                  // Add more cards here later, e.g.:
+                  // DashboardCard(
+                  //   title: 'Reports',
+                  //   subtitle: 'Generate monthly summaries',
+                  //   icon: Icons.bar_chart,
+                  //   color: Colors.green[700]!,
+                  //   onTap: () { ... },
+                  // ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

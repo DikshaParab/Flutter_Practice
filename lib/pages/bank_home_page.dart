@@ -3,6 +3,7 @@ import 'package:demo/widgets/my_app_bar.dart';
 import 'package:demo/widgets/logout_button.dart';
 import 'package:demo/services/customer_service.dart';
 import 'package:demo/pages/login_page.dart';
+import 'package:demo/services/excel_export_service.dart';
 import 'package:demo/widgets/bank/customer_filter.dart';
 import 'package:demo/widgets/bank/customer_table.dart';
 import 'package:demo/widgets/bank/pagination_controls.dart';
@@ -160,12 +161,18 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                  child: Text(
-                    'Welcome, ${_capitalizeFirstLetter(widget.username)}!',
-                    style: const TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () => Navigator.pop(context),
+                        icon: const Icon(Icons.arrow_back),
+                        tooltip: 'Back to dashboard',
+                      ),
+                      Text(
+                        'Welcome, ${_capitalizeFirstLetter(widget.username)}!',
+                        style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                 ),
                 CustomerFilter(
@@ -183,8 +190,21 @@ class _HomePageState extends State<HomePage> {
                   },
                   onSearch: _applyFilters,
                   onClear: _clearFilters,
+                  canExportPage: _hasSearched && _pageCustomers.isNotEmpty,
+                  canExportAll: _hasSearched && _filterCustomers.isNotEmpty,
+                  onExportPage: () {
+                    ExcelExportService.exportCustomers(
+                      _pageCustomers,
+                      filename: 'page_customers.xlsx',
+                    );
+                  },
+                  onExportAll: () {
+                    ExcelExportService.exportCustomers(
+                      _filterCustomers,
+                      filename: 'all_customers.xlsx',
+                    );
+                  },
                 ),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Align(

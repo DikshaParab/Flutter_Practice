@@ -13,6 +13,10 @@ class CustomerFilter extends StatelessWidget {
     required this.onStatusChanges,
     required this.onSearch,
     required this.onClear,
+    required this.onExportPage,
+    required this.onExportAll,
+    required this.canExportPage,
+    required this.canExportAll,
   });
 
   final TextEditingController customerIdController;
@@ -25,13 +29,17 @@ class CustomerFilter extends StatelessWidget {
   final ValueChanged<String?> onStatusChanges;
   final VoidCallback onSearch;
   final VoidCallback onClear;
+  final VoidCallback onExportPage;
+  final VoidCallback onExportAll;
+  final bool canExportPage;
+  final bool canExportAll;
 
   String _formatDate(DateTime? date) {
     if (date == null) return 'Select date';
     return '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
   }
 
-  static const _fieldHeight = 40.0;
+  static const _fieldHeight = 48.0;
   static const _fontSize = 13.0;
 
   @override
@@ -41,7 +49,7 @@ class CustomerFilter extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Row 1: Customer ID + Loan Status
+          // Row 1: Customer ID, Loan Status, From Date, To Date
           Row(
             children: [
               Expanded(
@@ -53,28 +61,32 @@ class CustomerFilter extends StatelessWidget {
                     decoration: const InputDecoration(
                       labelText: 'Customer ID',
                       labelStyle: TextStyle(fontSize: _fontSize),
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
                       prefixIcon: Icon(Icons.badge_outlined, size: 18),
+                      prefixIconConstraints: BoxConstraints(minWidth: 40, minHeight: 40),
                       border: OutlineInputBorder(),
                       isDense: true,
-                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 14),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 10),
 
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
                   child: DropdownButtonFormField<String>(
                     initialValue: selectedStatus,
+                    isExpanded: true,
                     style: const TextStyle(fontSize: _fontSize, color: Colors.black87),
                     decoration: const InputDecoration(
                       labelText: 'Loan status',
                       labelStyle: TextStyle(fontSize: _fontSize),
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
                       border: OutlineInputBorder(),
                       isDense: true,
-                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 14),
                     ),
                     items: statusOptions
                         .map((s) => DropdownMenuItem(value: s, child: Text(s)))
@@ -83,76 +95,136 @@ class CustomerFilter extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
-          ),
-          const SizedBox(height: 10),
+              const SizedBox(width: 10),
 
-          // Row 2: From Date + To Date
-          Row(
-            children: [
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
-                  child: OutlinedButton.icon(
+                  child: OutlinedButton(
                     onPressed: onFromDateTap,
-                    icon: const Icon(Icons.calendar_today, size: 14),
-                    label: Text(
-                      'From: ${_formatDate(fromDate)}',
-                      style: const TextStyle(fontSize: _fontSize),
-                    ),
                     style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'From: ${_formatDate(fromDate)}',
+                            style: const TextStyle(fontSize: _fontSize),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        const Icon(Icons.calendar_today, size: 14),
+                      ],
                     ),
                   ),
                 ),
               ),
-              const SizedBox(width: 12),
-              
+              const SizedBox(width: 10),
+
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
-                  child: OutlinedButton.icon(
+                  child: OutlinedButton(
                     onPressed: onToDateTap,
-                    icon: const Icon(Icons.calendar_today, size: 14),
-                    label: Text(
-                      'To: ${_formatDate(toDate)}',
-                      style: const TextStyle(fontSize: _fontSize),
-                    ),
                     style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'To: ${_formatDate(toDate)}',
+                            style: const TextStyle(fontSize: _fontSize),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        const Icon(Icons.calendar_today, size: 14),
+                      ],
                     ),
                   ),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 12),
 
-          // Row 3: Search + Clear
+          // Row 2: Search, Clear, Export Page, Export All
           Row(
             children: [
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
-                  child: ElevatedButton.icon(
+                  child: ElevatedButton(
                     onPressed: onSearch,
-                    icon: const Icon(Icons.search, size: 16),
-                    label: const Text('Search', style: TextStyle(fontSize: _fontSize)),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue[700],
                       foregroundColor: Colors.white,
                     ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text('Search', style: TextStyle(fontSize: _fontSize)),
+                        SizedBox(width: 6),
+                        Icon(Icons.search, size: 16),
+                      ],
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 10),
+
               Expanded(
                 child: SizedBox(
                   height: _fieldHeight,
-                  child: OutlinedButton.icon(
+                  child: OutlinedButton(
                     onPressed: onClear,
-                    icon: const Icon(Icons.clear, size: 16),
-                    label: const Text('Clear', style: TextStyle(fontSize: _fontSize)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text('Clear', style: TextStyle(fontSize: _fontSize)),
+                        SizedBox(width: 6),
+                        Icon(Icons.clear, size: 16),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+
+              Expanded(
+                child: SizedBox(
+                  height: _fieldHeight,
+                  child: OutlinedButton(
+                    onPressed: canExportPage ? onExportPage : null,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text('Export', style: TextStyle(fontSize: _fontSize)),
+                        SizedBox(width: 6),
+                        Icon(Icons.download, size: 16),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+
+              Expanded(
+                child: SizedBox(
+                  height: _fieldHeight,
+                  child: OutlinedButton(
+                    onPressed: canExportAll ? onExportAll : null,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text('Export All', style: TextStyle(fontSize: _fontSize)),
+                        SizedBox(width: 6),
+                        Icon(Icons.download, size: 16),
+                      ],
+                    ),
                   ),
                 ),
               ),

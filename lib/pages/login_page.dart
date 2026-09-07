@@ -1,5 +1,5 @@
 import 'package:demo/pages/customer_home_page.dart';
-import 'package:demo/pages/bank_home_page.dart';
+import 'package:demo/pages/bank_dashboard_page.dart';
 import 'package:demo/pages/forgot_password_page.dart';
 import 'package:demo/utils/captcha_generator.dart';
 import 'package:flutter/material.dart';
@@ -171,7 +171,7 @@ class _LoginPageAppState extends State<LoginPageApp> {
       context,
       MaterialPageRoute(
         builder: (context) => _selectedRole == 'Bank'
-        ? HomePage(username: username)
+        ? BankDashboardPage(username: username)
         : CustomerHomePage(username: username)),
     );
   }

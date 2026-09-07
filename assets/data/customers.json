@@ -1,0 +1,704 @@
+{
+  "customers": [
+    {
+      "customer_id": "CUST001",
+      "name": "Aarav Sharma",
+      "account_number": "4827193056148273",
+      "loan_status": "Approved",
+      "date": "2026-01-15"
+    },
+    {
+      "customer_id": "CUST002",
+      "name": "Priya Patel",
+      "account_number": "6153829471062584",
+      "loan_status": "Pending",
+      "date": "2026-01-22"
+    },
+    {
+      "customer_id": "CUST003",
+      "name": "Rohan Mehta",
+      "account_number": "7394618253071946",
+      "loan_status": "Rejected",
+      "date": "2026-02-03"
+    },
+    {
+      "customer_id": "CUST004",
+      "name": "Ananya Deshmukh",
+      "account_number": "5268173942056381",
+      "loan_status": "Approved",
+      "date": "2026-02-10"
+    },
+    {
+      "customer_id": "CUST005",
+      "name": "Vikram Joshi",
+      "account_number": "8042637159284061",
+      "loan_status": "Pending",
+      "date": "2026-02-18"
+    },
+    {
+      "customer_id": "CUST006",
+      "name": "Sneha Kulkarni",
+      "account_number": "3917284651038275",
+      "loan_status": "Approved",
+      "date": "2026-03-01"
+    },
+    {
+      "customer_id": "CUST007",
+      "name": "Aditya Rao",
+      "account_number": "6571940283657194",
+      "loan_status": "Rejected",
+      "date": "2026-03-09"
+    },
+    {
+      "customer_id": "CUST008",
+      "name": "Neha Shah",
+      "account_number": "9182736450192837",
+      "loan_status": "Pending",
+      "date": "2026-03-17"
+    },
+    {
+      "customer_id": "CUST009",
+      "name": "Karan Malhotra",
+      "account_number": "4738291056473829",
+      "loan_status": "Approved",
+      "date": "2026-03-25"
+    },
+    {
+      "customer_id": "CUST010",
+      "name": "Isha Nair",
+      "account_number": "5829147362058194",
+      "loan_status": "Rejected",
+      "date": "2026-04-02"
+    },
+    {
+      "customer_id": "CUST011",
+      "name": "Rahul Verma",
+      "account_number": "7463829150472638",
+      "loan_status": "Approved",
+      "date": "2026-04-11"
+    },
+    {
+      "customer_id": "CUST012",
+      "name": "Meera Iyer",
+      "account_number": "3291847562039184",
+      "loan_status": "Pending",
+      "date": "2026-04-19"
+    },
+    {
+      "customer_id": "CUST013",
+      "name": "Siddharth Kapoor",
+      "account_number": "8615293740186259",
+      "loan_status": "Rejected",
+      "date": "2026-05-03"
+    },
+    {
+      "customer_id": "CUST014",
+      "name": "Kavya Menon",
+      "account_number": "5147283691054728",
+      "loan_status": "Approved",
+      "date": "2026-05-12"
+    },
+    {
+      "customer_id": "CUST015",
+      "name": "Arjun Singh",
+      "account_number": "6938174250369182",
+      "loan_status": "Pending",
+      "date": "2026-05-21"
+    },
+    {
+      "customer_id": "CUST016",
+      "name": "Pooja Chavan",
+      "account_number": "4275918362047519",
+      "loan_status": "Approved",
+      "date": "2026-06-05"
+    },
+    {
+      "customer_id": "CUST017",
+      "name": "Manish Gupta",
+      "account_number": "7852146390178524",
+      "loan_status": "Rejected",
+      "date": "2026-06-14"
+    },
+    {
+      "customer_id": "CUST018",
+      "name": "Riya Bansal",
+      "account_number": "6319472058163947",
+      "loan_status": "Pending",
+      "date": "2026-07-02"
+    },
+    {
+      "customer_id": "CUST019",
+      "name": "Devansh Mishra",
+      "account_number": "8526371940285631",
+      "loan_status": "Approved",
+      "date": "2026-07-18"
+    },
+    {
+      "customer_id": "CUST020",
+      "name": "Simran Kaur",
+      "account_number": "3047182956371048",
+      "loan_status": "Rejected",
+      "date": "2026-08-08"
+    },
+    {
+      "customer_id": "CUST021",
+      "name": "Nikhil Agarwal",
+      "account_number": "4178256391047285",
+      "loan_status": "Approved",
+      "date": "2026-01-28"
+    },
+    {
+      "customer_id": "CUST022",
+      "name": "Tanvi Joshi",
+      "account_number": "5839201746283519",
+      "loan_status": "Pending",
+      "date": "2026-02-07"
+    },
+    {
+      "customer_id": "CUST023",
+      "name": "Saurabh Patil",
+      "account_number": "7294158360271945",
+      "loan_status": "Rejected",
+      "date": "2026-02-16"
+    },
+    {
+      "customer_id": "CUST024",
+      "name": "Aditi Desai",
+      "account_number": "3618274950182637",
+      "loan_status": "Approved",
+      "date": "2026-02-24"
+    },
+    {
+      "customer_id": "CUST025",
+      "name": "Yash Thakur",
+      "account_number": "6942185371064928",
+      "loan_status": "Pending",
+      "date": "2026-03-05"
+    },
+    {
+      "customer_id": "CUST026",
+      "name": "Shreya Mukherjee",
+      "account_number": "8152937460285194",
+      "loan_status": "Approved",
+      "date": "2026-03-13"
+    },
+    {
+      "customer_id": "CUST027",
+      "name": "Akash Sinha",
+      "account_number": "4729163850274619",
+      "loan_status": "Rejected",
+      "date": "2026-03-22"
+    },
+    {
+      "customer_id": "CUST028",
+      "name": "Nandini Rao",
+      "account_number": "6384172059361847",
+      "loan_status": "Pending",
+      "date": "2026-04-06"
+    },
+    {
+      "customer_id": "CUST029",
+      "name": "Varun Kapoor",
+      "account_number": "9273516402857193",
+      "loan_status": "Approved",
+      "date": "2026-04-15"
+    },
+    {
+      "customer_id": "CUST030",
+      "name": "Mansi Shah",
+      "account_number": "5146398271054836",
+      "loan_status": "Rejected",
+      "date": "2026-04-27"
+    },
+    {
+      "customer_id": "CUST031",
+      "name": "Harsh Vardhan",
+      "account_number": "7832054169283741",
+      "loan_status": "Approved",
+      "date": "2026-05-06"
+    },
+    {
+      "customer_id": "CUST032",
+      "name": "Divya Reddy",
+      "account_number": "4298173652049183",
+      "loan_status": "Pending",
+      "date": "2026-05-15"
+    },
+    {
+      "customer_id": "CUST033",
+      "name": "Mohit Tiwari",
+      "account_number": "6519283740165294",
+      "loan_status": "Rejected",
+      "date": "2026-05-27"
+    },
+    {
+      "customer_id": "CUST034",
+      "name": "Sakshi Pawar",
+      "account_number": "3084719256382047",
+      "loan_status": "Approved",
+      "date": "2026-06-08"
+    },
+    {
+      "customer_id": "CUST035",
+      "name": "Ritesh Yadav",
+      "account_number": "8172639405182736",
+      "loan_status": "Pending",
+      "date": "2026-06-19"
+    },
+    {
+      "customer_id": "CUST036",
+      "name": "Komal Sethi",
+      "account_number": "5629183742056198",
+      "loan_status": "Approved",
+      "date": "2026-06-27"
+    },
+    {
+      "customer_id": "CUST037",
+      "name": "Abhishek Jain",
+      "account_number": "7346192058374612",
+      "loan_status": "Rejected",
+      "date": "2026-07-07"
+    },
+    {
+      "customer_id": "CUST038",
+      "name": "Pallavi Naik",
+      "account_number": "4918273650184927",
+      "loan_status": "Pending",
+      "date": "2026-07-15"
+    },
+    {
+      "customer_id": "CUST039",
+      "name": "Rajat Bhatia",
+      "account_number": "8263519472056384",
+      "loan_status": "Approved",
+      "date": "2026-07-24"
+    },
+    {
+      "customer_id": "CUST040",
+      "name": "Swati Arora",
+      "account_number": "3759182640273519",
+      "loan_status": "Rejected",
+      "date": "2026-08-02"
+    },
+    {
+      "customer_id": "CUST041",
+      "name": "Aman Srivastava",
+      "account_number": "6182739451028364",
+      "loan_status": "Approved",
+      "date": "2026-08-12"
+    },
+    {
+      "customer_id": "CUST042",
+      "name": "Nisha Choudhary",
+      "account_number": "4826391750284163",
+      "loan_status": "Pending",
+      "date": "2026-08-18"
+    },
+    {
+      "customer_id": "CUST043",
+      "name": "Vivek Anand",
+      "account_number": "7539182641057293",
+      "loan_status": "Rejected",
+      "date": "2026-08-25"
+    },
+    {
+      "customer_id": "CUST044",
+      "name": "Radhika Joshi",
+      "account_number": "5291846372059184",
+      "loan_status": "Approved",
+      "date": "2026-08-30"
+    },
+    {
+      "customer_id": "CUST045",
+      "name": "Sahil Khan",
+      "account_number": "8462173950284617",
+      "loan_status": "Pending",
+      "date": "2026-02-12"
+    },
+    {
+      "customer_id": "CUST046",
+      "name": "Bhavna Mehra",
+      "account_number": "3918256471039285",
+      "loan_status": "Approved",
+      "date": "2026-03-29"
+    },
+    {
+      "customer_id": "CUST047",
+      "name": "Tarun Goyal",
+      "account_number": "6752918340265719",
+      "loan_status": "Rejected",
+      "date": "2026-04-09"
+    },
+    {
+      "customer_id": "CUST048",
+      "name": "Muskan Gupta",
+      "account_number": "5182739462018374",
+      "loan_status": "Pending",
+      "date": "2026-04-21"
+    },
+    {
+      "customer_id": "CUST049",
+      "name": "Rohit Chawla",
+      "account_number": "7391824650273918",
+      "loan_status": "Approved",
+      "date": "2026-05-09"
+    },
+    {
+      "customer_id": "CUST050",
+      "name": "Preeti Sood",
+      "account_number": "4268159372054816",
+      "loan_status": "Rejected",
+      "date": "2026-05-31"
+    },
+    {
+      "customer_id": "CUST051",
+      "name": "Kunal Bansal",
+      "account_number": "8517293640185273",
+      "loan_status": "Approved",
+      "date": "2026-06-11"
+    },
+    {
+      "customer_id": "CUST052",
+      "name": "Shalini Verma",
+      "account_number": "6039182745162038",
+      "loan_status": "Pending",
+      "date": "2026-06-22"
+    },
+    {
+      "customer_id": "CUST053",
+      "name": "Gaurav Saxena",
+      "account_number": "4728159362018475",
+      "loan_status": "Rejected",
+      "date": "2026-07-11"
+    },
+    {
+      "customer_id": "CUST054",
+      "name": "Monika Singhal",
+      "account_number": "9183647251038462",
+      "loan_status": "Approved",
+      "date": "2026-07-20"
+    },
+    {
+      "customer_id": "CUST055",
+      "name": "Rishabh Goel",
+      "account_number": "5372918462053719",
+      "loan_status": "Pending",
+      "date": "2026-08-05"
+    },
+    {
+      "customer_id": "CUST056",
+      "name": "Priti Kamat",
+      "account_number": "6842173950286147",
+      "loan_status": "Approved",
+      "date": "2026-08-15"
+    },
+    {
+      "customer_id": "CUST057",
+      "name": "Sameer Kulkarni",
+      "account_number": "3158296472015836",
+      "loan_status": "Rejected",
+      "date": "2026-08-22"
+    },
+    {
+      "customer_id": "CUST058",
+      "name": "Rupal Shah",
+      "account_number": "7293846150271938",
+      "loan_status": "Pending",
+      "date": "2026-08-28"
+    },
+    {
+      "customer_id": "CUST059",
+      "name": "Vishal Desai",
+      "account_number": "4618273950184627",
+      "loan_status": "Approved",
+      "date": "2026-01-31"
+    },
+    {
+      "customer_id": "CUST060",
+      "name": "Shruti Nair",
+      "account_number": "8251937462019583",
+      "loan_status": "Rejected",
+      "date": "2026-02-20"
+    },
+    {
+      "customer_id": "CUST061",
+      "name": "Chirag Shah",
+      "account_number": "3948172651039482",
+      "loan_status": "Approved",
+      "date": "2026-03-03"
+    },
+    {
+      "customer_id": "CUST062",
+      "name": "Rashmi Iyer",
+      "account_number": "6719283450276194",
+      "loan_status": "Pending",
+      "date": "2026-03-15"
+    },
+    {
+      "customer_id": "CUST063",
+      "name": "Sandeep More",
+      "account_number": "5186392741058362",
+      "loan_status": "Rejected",
+      "date": "2026-04-04"
+    },
+    {
+      "customer_id": "CUST064",
+      "name": "Ayesha Khan",
+      "account_number": "7432918650274319",
+      "loan_status": "Approved",
+      "date": "2026-04-18"
+    },
+    {
+      "customer_id": "CUST065",
+      "name": "Nitin Sawant",
+      "account_number": "2864173950286174",
+      "loan_status": "Pending",
+      "date": "2026-05-02"
+    },
+    {
+      "customer_id": "CUST066",
+      "name": "Juhi Mehta",
+      "account_number": "6391824750163928",
+      "loan_status": "Approved",
+      "date": "2026-05-18"
+    },
+    {
+      "customer_id": "CUST067",
+      "name": "Deepak Yadav",
+      "account_number": "8173946250281736",
+      "loan_status": "Rejected",
+      "date": "2026-06-03"
+    },
+    {
+      "customer_id": "CUST068",
+      "name": "Renu Mishra",
+      "account_number": "4529186372019458",
+      "loan_status": "Pending",
+      "date": "2026-06-16"
+    },
+    {
+      "customer_id": "CUST069",
+      "name": "Pranav Joshi",
+      "account_number": "7294618350182739",
+      "loan_status": "Approved",
+      "date": "2026-06-29"
+    },
+    {
+      "customer_id": "CUST070",
+      "name": "Shweta Patil",
+      "account_number": "5819273642058193",
+      "loan_status": "Rejected",
+      "date": "2026-07-05"
+    },
+    {
+      "customer_id": "CUST071",
+      "name": "Ravi Kumar",
+      "account_number": "3648172950283641",
+      "loan_status": "Approved",
+      "date": "2026-07-13"
+    },
+    {
+      "customer_id": "CUST072",
+      "name": "Poonam Rane",
+      "account_number": "8156372941028563",
+      "loan_status": "Pending",
+      "date": "2026-07-27"
+    },
+    {
+      "customer_id": "CUST073",
+      "name": "Aniket Pawar",
+      "account_number": "4927183650274918",
+      "loan_status": "Rejected",
+      "date": "2026-08-03"
+    },
+    {
+      "customer_id": "CUST074",
+      "name": "Sonali Naik",
+      "account_number": "6382917450163827",
+      "loan_status": "Approved",
+      "date": "2026-08-10"
+    },
+    {
+      "customer_id": "CUST075",
+      "name": "Akshay Jadhav",
+      "account_number": "5273918462052739",
+      "loan_status": "Pending",
+      "date": "2026-08-17"
+    },
+    {
+      "customer_id": "CUST076",
+      "name": "Alisha Fernandes",
+      "account_number": "7816293450287164",
+      "loan_status": "Approved",
+      "date": "2026-08-21"
+    },
+    {
+      "customer_id": "CUST077",
+      "name": "Saurav Das",
+      "account_number": "4168273950184162",
+      "loan_status": "Rejected",
+      "date": "2026-08-26"
+    },
+    {
+      "customer_id": "CUST078",
+      "name": "Kriti Agarwal",
+      "account_number": "5927183640275918",
+      "loan_status": "Pending",
+      "date": "2026-08-29"
+    },
+    {
+      "customer_id": "CUST079",
+      "name": "Varsha Reddy",
+      "account_number": "8372914650183729",
+      "loan_status": "Approved",
+      "date": "2026-02-27"
+    },
+    {
+      "customer_id": "CUST080",
+      "name": "Abhinav Mishra",
+      "account_number": "4619283750204618",
+      "loan_status": "Rejected",
+      "date": "2026-03-11"
+    },
+    {
+      "customer_id": "CUST081",
+      "name": "Naveen Pillai",
+      "account_number": "7253918460287253",
+      "loan_status": "Approved",
+      "date": "2026-04-13"
+    },
+    {
+      "customer_id": "CUST082",
+      "name": "Lavanya Rao",
+      "account_number": "3819274651028391",
+      "loan_status": "Pending",
+      "date": "2026-04-25"
+    },
+    {
+      "customer_id": "CUST083",
+      "name": "Prakash Menon",
+      "account_number": "6148293750261483",
+      "loan_status": "Rejected",
+      "date": "2026-05-07"
+    },
+    {
+      "customer_id": "CUST084",
+      "name": "Madhuri Deshpande",
+      "account_number": "8527163940285176",
+      "loan_status": "Approved",
+      "date": "2026-05-25"
+    },
+    {
+      "customer_id": "CUST085",
+      "name": "Rakesh Soni",
+      "account_number": "4938172651049382",
+      "loan_status": "Pending",
+      "date": "2026-06-07"
+    },
+    {
+      "customer_id": "CUST086",
+      "name": "Payal Gupta",
+      "account_number": "7263918450272619",
+      "loan_status": "Approved",
+      "date": "2026-06-20"
+    },
+    {
+      "customer_id": "CUST087",
+      "name": "Ashwin Nair",
+      "account_number": "5182736491025817",
+      "loan_status": "Rejected",
+      "date": "2026-07-01"
+    },
+    {
+      "customer_id": "CUST088",
+      "name": "Deepa Sharma",
+      "account_number": "6391847250163927",
+      "loan_status": "Pending",
+      "date": "2026-07-09"
+    },
+    {
+      "customer_id": "CUST089",
+      "name": "Yogesh Patil",
+      "account_number": "4817293650284175",
+      "loan_status": "Approved",
+      "date": "2026-07-22"
+    },
+    {
+      "customer_id": "CUST090",
+      "name": "Namrata Singh",
+      "account_number": "7532918460275319",
+      "loan_status": "Rejected",
+      "date": "2026-08-01"
+    },
+    {
+      "customer_id": "CUST091",
+      "name": "Rajiv Bhat",
+      "account_number": "3169274851031694",
+      "loan_status": "Approved",
+      "date": "2026-08-06"
+    },
+    {
+      "customer_id": "CUST092",
+      "name": "Anushka Roy",
+      "account_number": "8253749160282537",
+      "loan_status": "Pending",
+      "date": "2026-08-11"
+    },
+    {
+      "customer_id": "CUST093",
+      "name": "Hemant Joshi",
+      "account_number": "4718293650184712",
+      "loan_status": "Rejected",
+      "date": "2026-08-16"
+    },
+    {
+      "customer_id": "CUST094",
+      "name": "Ritika Malhotra",
+      "account_number": "6928174350269271",
+      "loan_status": "Approved",
+      "date": "2026-08-20"
+    },
+    {
+      "customer_id": "CUST095",
+      "name": "Suraj Chavan",
+      "account_number": "5186293740151862",
+      "loan_status": "Pending",
+      "date": "2026-08-23"
+    },
+    {
+      "customer_id": "CUST096",
+      "name": "Gayatri Kulkarni",
+      "account_number": "7349182650273419",
+      "loan_status": "Approved",
+      "date": "2026-08-24"
+    },
+    {
+      "customer_id": "CUST097",
+      "name": "Maulik Shah",
+      "account_number": "4816273950184816",
+      "loan_status": "Rejected",
+      "date": "2026-08-27"
+    },
+    {
+      "customer_id": "CUST098",
+      "name": "Reshma Khan",
+      "account_number": "6291837450262918",
+      "loan_status": "Pending",
+      "date": "2026-08-31"
+    },
+    {
+      "customer_id": "CUST099",
+      "name": "Omkar Desai",
+      "account_number": "8172639450281746",
+      "loan_status": "Approved",
+      "date": "2026-09-01"
+    },
+    {
+      "customer_id": "CUST100",
+      "name": "Sonia Kapoor",
+      "account_number": "5362918470253619",
+      "loan_status": "Rejected",
+      "date": "2026-09-03"
+    }
+  ]
+}

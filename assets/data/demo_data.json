@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "Admin@123",
+      "accountType": "Bank",
+      "ph_no": 9876543210
+    },
+    {
+      "id": 2,
+      "username": "customer",
+      "password": "Customer@123",
+      "accountType": "Customer",
+      "ph_no": 8765432190
+    }
+  ]
+}

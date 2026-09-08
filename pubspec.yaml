@@ -67,6 +67,7 @@ flutter:
     - assets/images/hdfc_logo.png
     - assets/data/demo_data.json
     - assets/data/customers.json
+    - assets/data/loan_data.json
 
 
   # To add assets to your application, add an assets section, like this:

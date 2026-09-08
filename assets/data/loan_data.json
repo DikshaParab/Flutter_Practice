@@ -1,0 +1,1246 @@
+{
+  "loan_type_options": {
+    "Personal": {
+      "subtypes": [
+        "Medical Loan",
+        "Wedding Loan",
+        "Travel Loan",
+        "Emergency Loan"
+      ]
+    },
+    "Home": {
+      "subtypes": [
+        "Home Purchase",
+        "Home Construction",
+        "Home Renovation",
+        "Home Loan Balance Transfer"
+      ]
+    },
+    "Auto": {
+      "subtypes": [
+        "New Car Loan",
+        "Used Car Loan",
+        "Two-Wheeler Loan",
+        "Commercial Vehicle Loan"
+      ]
+    },
+    "Education": {
+      "subtypes": [
+        "Higher Education Loan",
+        "Vocational Education Loan",
+        "Study Abroad Loan",
+        "Professional Course Loan"
+      ]
+    },
+    "Business": {
+      "subtypes": [
+        "Working Capital Loan",
+        "Equipment Finance",
+        "Business Expansion Loan",
+        "Business Property Loan"
+      ]
+    }
+  },
+  "customers": [
+    {
+      "customer_id": "CUST001",
+      "name": "Aarav Sharma",
+      "account_number": "4000000000731927",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Medical Loan",
+        "loan_status": "Approved",
+        "date": "2026-01-15"
+      },
+      "phone_number": "9404332181"
+    },
+    {
+      "customer_id": "CUST002",
+      "name": "Priya Patel",
+      "account_number": "4000000001463854",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Purchase",
+        "loan_status": "Pending",
+        "date": "2026-01-19"
+      },
+      "phone_number": "7860013389"
+    },
+    {
+      "customer_id": "CUST003",
+      "name": "Rohan Mehta",
+      "account_number": "4000000002195781",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "New Car Loan",
+        "loan_status": "Rejected",
+        "date": "2026-01-23"
+      },
+      "phone_number": "9183863794"
+    },
+    {
+      "customer_id": "CUST004",
+      "name": "Ananya Deshmukh",
+      "account_number": "4000000002927708",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Higher Education Loan",
+        "loan_status": "Approved",
+        "date": "2026-01-27"
+      },
+      "phone_number": "9126542351"
+    },
+    {
+      "customer_id": "CUST005",
+      "name": "Vikram Joshi",
+      "account_number": "4000000003659635",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Working Capital Loan",
+        "loan_status": "Pending",
+        "date": "2026-01-31"
+      },
+      "phone_number": "9361559407"
+    },
+    {
+      "customer_id": "CUST006",
+      "name": "Sneha Kulkarni",
+      "account_number": "4000000004391562",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Wedding Loan",
+        "loan_status": "Rejected",
+        "date": "2026-02-04"
+      },
+      "phone_number": "7916184959"
+    },
+    {
+      "customer_id": "CUST007",
+      "name": "Aditya Rao",
+      "account_number": "4000000005123489",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Construction",
+        "loan_status": "Approved",
+        "date": "2026-02-08"
+      },
+      "phone_number": "9710341316"
+    },
+    {
+      "customer_id": "CUST008",
+      "name": "Neha Shah",
+      "account_number": "4000000005855416",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Used Car Loan",
+        "loan_status": "Pending",
+        "date": "2026-02-05"
+      },
+      "phone_number": "9975255341"
+    },
+    {
+      "customer_id": "CUST009",
+      "name": "Karan Malhotra",
+      "account_number": "4000000006587343",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Vocational Education Loan",
+        "loan_status": "Rejected",
+        "date": "2026-02-09"
+      },
+      "phone_number": "7728327648"
+    },
+    {
+      "customer_id": "CUST010",
+      "name": "Isha Nair",
+      "account_number": "4000000007319270",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Equipment Finance",
+        "loan_status": "Approved",
+        "date": "2026-02-13"
+      },
+      "phone_number": "9850305641"
+    },
+    {
+      "customer_id": "CUST011",
+      "name": "Rahul Verma",
+      "account_number": "4000000008051197",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Travel Loan",
+        "loan_status": "Pending",
+        "date": "2026-02-17"
+      },
+      "phone_number": "9795376724"
+    },
+    {
+      "customer_id": "CUST012",
+      "name": "Meera Iyer",
+      "account_number": "4000000008783124",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Renovation",
+        "loan_status": "Rejected",
+        "date": "2026-02-21"
+      },
+      "phone_number": "9538849696"
+    },
+    {
+      "customer_id": "CUST013",
+      "name": "Siddharth Kapoor",
+      "account_number": "4000000009515051",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Two-Wheeler Loan",
+        "loan_status": "Approved",
+        "date": "2026-02-25"
+      },
+      "phone_number": "8832871012"
+    },
+    {
+      "customer_id": "CUST014",
+      "name": "Kavya Menon",
+      "account_number": "4000000010246978",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Study Abroad Loan",
+        "loan_status": "Pending",
+        "date": "2026-03-01"
+      },
+      "phone_number": "9669166978"
+    },
+    {
+      "customer_id": "CUST015",
+      "name": "Arjun Singh",
+      "account_number": "4000000010978905",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Expansion Loan",
+        "loan_status": "Rejected",
+        "date": "2026-02-26"
+      },
+      "phone_number": "9980184514"
+    },
+    {
+      "customer_id": "CUST016",
+      "name": "Pooja Chavan",
+      "account_number": "4000000011710832",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Emergency Loan",
+        "loan_status": "Approved",
+        "date": "2026-03-02"
+      },
+      "phone_number": "8627048281"
+    },
+    {
+      "customer_id": "CUST017",
+      "name": "Manish Gupta",
+      "account_number": "4000000012442759",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Loan Balance Transfer",
+        "loan_status": "Pending",
+        "date": "2026-03-06"
+      },
+      "phone_number": "9089325288"
+    },
+    {
+      "customer_id": "CUST018",
+      "name": "Riya Bansal",
+      "account_number": "4000000013174686",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Commercial Vehicle Loan",
+        "loan_status": "Rejected",
+        "date": "2026-03-10"
+      },
+      "phone_number": "9195701543"
+    },
+    {
+      "customer_id": "CUST019",
+      "name": "Devansh Mishra",
+      "account_number": "4000000013906613",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Professional Course Loan",
+        "loan_status": "Approved",
+        "date": "2026-03-14"
+      },
+      "phone_number": "9239117182"
+    },
+    {
+      "customer_id": "CUST020",
+      "name": "Simran Kaur",
+      "account_number": "4000000014638540",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Property Loan",
+        "loan_status": "Pending",
+        "date": "2026-03-18"
+      },
+      "phone_number": "9578248963"
+    },
+    {
+      "customer_id": "CUST021",
+      "name": "Nikhil Agarwal",
+      "account_number": "4000000015370467",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Medical Loan",
+        "loan_status": "Rejected",
+        "date": "2026-03-22"
+      },
+      "phone_number": "7934657871"
+    },
+    {
+      "customer_id": "CUST022",
+      "name": "Tanvi Joshi",
+      "account_number": "4000000016102394",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Purchase",
+        "loan_status": "Approved",
+        "date": "2026-03-19"
+      },
+      "phone_number": "9831509839"
+    },
+    {
+      "customer_id": "CUST023",
+      "name": "Saurabh Patil",
+      "account_number": "4000000016834321",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "New Car Loan",
+        "loan_status": "Pending",
+        "date": "2026-03-23"
+      },
+      "phone_number": "9801031051"
+    },
+    {
+      "customer_id": "CUST024",
+      "name": "Aditi Desai",
+      "account_number": "4000000017566248",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Higher Education Loan",
+        "loan_status": "Rejected",
+        "date": "2026-03-27"
+      },
+      "phone_number": "7034738299"
+    },
+    {
+      "customer_id": "CUST025",
+      "name": "Yash Thakur",
+      "account_number": "4000000018298175",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Working Capital Loan",
+        "loan_status": "Approved",
+        "date": "2026-03-31"
+      },
+      "phone_number": "8037631165"
+    },
+    {
+      "customer_id": "CUST026",
+      "name": "Shreya Mukherjee",
+      "account_number": "4000000019030102",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Wedding Loan",
+        "loan_status": "Pending",
+        "date": "2026-04-04"
+      },
+      "phone_number": "8667010651"
+    },
+    {
+      "customer_id": "CUST027",
+      "name": "Akash Sinha",
+      "account_number": "4000000019762029",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Construction",
+        "loan_status": "Rejected",
+        "date": "2026-04-08"
+      },
+      "phone_number": "9833872624"
+    },
+    {
+      "customer_id": "CUST028",
+      "name": "Nandini Rao",
+      "account_number": "4000000020493956",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Used Car Loan",
+        "loan_status": "Approved",
+        "date": "2026-04-12"
+      },
+      "phone_number": "8131781080"
+    },
+    {
+      "customer_id": "CUST029",
+      "name": "Varun Kapoor",
+      "account_number": "4000000021225883",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Vocational Education Loan",
+        "loan_status": "Pending",
+        "date": "2026-04-09"
+      },
+      "phone_number": "9332677360"
+    },
+    {
+      "customer_id": "CUST030",
+      "name": "Mansi Shah",
+      "account_number": "4000000021957810",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Equipment Finance",
+        "loan_status": "Rejected",
+        "date": "2026-04-13"
+      },
+      "phone_number": "9660647468"
+    },
+    {
+      "customer_id": "CUST031",
+      "name": "Harsh Vardhan",
+      "account_number": "4000000022689737",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Travel Loan",
+        "loan_status": "Approved",
+        "date": "2026-04-17"
+      },
+      "phone_number": "8023430980"
+    },
+    {
+      "customer_id": "CUST032",
+      "name": "Divya Reddy",
+      "account_number": "4000000023421664",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Renovation",
+        "loan_status": "Pending",
+        "date": "2026-04-21"
+      },
+      "phone_number": "8900978820"
+    },
+    {
+      "customer_id": "CUST033",
+      "name": "Mohit Tiwari",
+      "account_number": "4000000024153591",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Two-Wheeler Loan",
+        "loan_status": "Rejected",
+        "date": "2026-04-25"
+      },
+      "phone_number": "7012191361"
+    },
+    {
+      "customer_id": "CUST034",
+      "name": "Sakshi Pawar",
+      "account_number": "4000000024885518",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Study Abroad Loan",
+        "loan_status": "Approved",
+        "date": "2026-04-29"
+      },
+      "phone_number": "7839909169"
+    },
+    {
+      "customer_id": "CUST035",
+      "name": "Ritesh Yadav",
+      "account_number": "4000000025617445",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Expansion Loan",
+        "loan_status": "Pending",
+        "date": "2026-05-03"
+      },
+      "phone_number": "7885435346"
+    },
+    {
+      "customer_id": "CUST036",
+      "name": "Komal Sethi",
+      "account_number": "4000000026349372",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Emergency Loan",
+        "loan_status": "Rejected",
+        "date": "2026-04-30"
+      },
+      "phone_number": "9547510799"
+    },
+    {
+      "customer_id": "CUST037",
+      "name": "Abhishek Jain",
+      "account_number": "4000000027081299",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Loan Balance Transfer",
+        "loan_status": "Approved",
+        "date": "2026-05-04"
+      },
+      "phone_number": "9418384251"
+    },
+    {
+      "customer_id": "CUST038",
+      "name": "Pallavi Naik",
+      "account_number": "4000000027813226",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Commercial Vehicle Loan",
+        "loan_status": "Pending",
+        "date": "2026-05-08"
+      },
+      "phone_number": "9854278498"
+    },
+    {
+      "customer_id": "CUST039",
+      "name": "Rajat Bhatia",
+      "account_number": "4000000028545153",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Professional Course Loan",
+        "loan_status": "Rejected",
+        "date": "2026-05-12"
+      },
+      "phone_number": "9184124118"
+    },
+    {
+      "customer_id": "CUST040",
+      "name": "Swati Arora",
+      "account_number": "4000000029277080",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Property Loan",
+        "loan_status": "Approved",
+        "date": "2026-05-16"
+      },
+      "phone_number": "9544935348"
+    },
+    {
+      "customer_id": "CUST041",
+      "name": "Aman Srivastava",
+      "account_number": "4000000030009007",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Medical Loan",
+        "loan_status": "Pending",
+        "date": "2026-05-20"
+      },
+      "phone_number": "8040164005"
+    },
+    {
+      "customer_id": "CUST042",
+      "name": "Nisha Choudhary",
+      "account_number": "4000000030740934",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Purchase",
+        "loan_status": "Rejected",
+        "date": "2026-05-24"
+      },
+      "phone_number": "9542786801"
+    },
+    {
+      "customer_id": "CUST043",
+      "name": "Vivek Anand",
+      "account_number": "4000000031472861",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "New Car Loan",
+        "loan_status": "Approved",
+        "date": "2026-05-21"
+      },
+      "phone_number": "9328059826"
+    },
+    {
+      "customer_id": "CUST044",
+      "name": "Radhika Joshi",
+      "account_number": "4000000032204788",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Higher Education Loan",
+        "loan_status": "Pending",
+        "date": "2026-05-25"
+      },
+      "phone_number": "9504505331"
+    },
+    {
+      "customer_id": "CUST045",
+      "name": "Sahil Khan",
+      "account_number": "4000000032936715",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Working Capital Loan",
+        "loan_status": "Rejected",
+        "date": "2026-05-29"
+      },
+      "phone_number": "8886923226"
+    },
+    {
+      "customer_id": "CUST046",
+      "name": "Bhavna Mehra",
+      "account_number": "4000000033668642",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Wedding Loan",
+        "loan_status": "Approved",
+        "date": "2026-06-02"
+      },
+      "phone_number": "9125634216"
+    },
+    {
+      "customer_id": "CUST047",
+      "name": "Tarun Goyal",
+      "account_number": "4000000034400569",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Construction",
+        "loan_status": "Pending",
+        "date": "2026-06-06"
+      },
+      "phone_number": "9273375433"
+    },
+    {
+      "customer_id": "CUST048",
+      "name": "Muskan Gupta",
+      "account_number": "4000000035132496",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Used Car Loan",
+        "loan_status": "Rejected",
+        "date": "2026-06-10"
+      },
+      "phone_number": "9136541458"
+    },
+    {
+      "customer_id": "CUST049",
+      "name": "Rohit Chawla",
+      "account_number": "4000000035864423",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Vocational Education Loan",
+        "loan_status": "Approved",
+        "date": "2026-06-14"
+      },
+      "phone_number": "8785014294"
+    },
+    {
+      "customer_id": "CUST050",
+      "name": "Preeti Sood",
+      "account_number": "4000000036596350",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Equipment Finance",
+        "loan_status": "Pending",
+        "date": "2026-06-11"
+      },
+      "phone_number": "9219655698"
+    },
+    {
+      "customer_id": "CUST051",
+      "name": "Kunal Bansal",
+      "account_number": "4000000037328277",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Travel Loan",
+        "loan_status": "Rejected",
+        "date": "2026-06-15"
+      },
+      "phone_number": "9469340608"
+    },
+    {
+      "customer_id": "CUST052",
+      "name": "Shalini Verma",
+      "account_number": "4000000038060204",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Renovation",
+        "loan_status": "Approved",
+        "date": "2026-06-19"
+      },
+      "phone_number": "7935615951"
+    },
+    {
+      "customer_id": "CUST053",
+      "name": "Gaurav Saxena",
+      "account_number": "4000000038792131",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Two-Wheeler Loan",
+        "loan_status": "Pending",
+        "date": "2026-06-23"
+      },
+      "phone_number": "9084656482"
+    },
+    {
+      "customer_id": "CUST054",
+      "name": "Monika Singhal",
+      "account_number": "4000000039524058",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Study Abroad Loan",
+        "loan_status": "Rejected",
+        "date": "2026-06-27"
+      },
+      "phone_number": "9766299468"
+    },
+    {
+      "customer_id": "CUST055",
+      "name": "Rishabh Goel",
+      "account_number": "4000000040255985",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Expansion Loan",
+        "loan_status": "Approved",
+        "date": "2026-07-01"
+      },
+      "phone_number": "9144369957"
+    },
+    {
+      "customer_id": "CUST056",
+      "name": "Priti Kamat",
+      "account_number": "4000000040987912",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Emergency Loan",
+        "loan_status": "Pending",
+        "date": "2026-07-05"
+      },
+      "phone_number": "8173872148"
+    },
+    {
+      "customer_id": "CUST057",
+      "name": "Sameer Kulkarni",
+      "account_number": "4000000041719839",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Loan Balance Transfer",
+        "loan_status": "Rejected",
+        "date": "2026-07-02"
+      },
+      "phone_number": "7751343320"
+    },
+    {
+      "customer_id": "CUST058",
+      "name": "Rupal Shah",
+      "account_number": "4000000042451766",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Commercial Vehicle Loan",
+        "loan_status": "Approved",
+        "date": "2026-07-06"
+      },
+      "phone_number": "9237917693"
+    },
+    {
+      "customer_id": "CUST059",
+      "name": "Vishal Desai",
+      "account_number": "4000000043183693",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Professional Course Loan",
+        "loan_status": "Pending",
+        "date": "2026-07-10"
+      },
+      "phone_number": "8776320163"
+    },
+    {
+      "customer_id": "CUST060",
+      "name": "Shruti Nair",
+      "account_number": "4000000043915620",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Property Loan",
+        "loan_status": "Rejected",
+        "date": "2026-07-14"
+      },
+      "phone_number": "9687083172"
+    },
+    {
+      "customer_id": "CUST061",
+      "name": "Chirag Shah",
+      "account_number": "4000000044647547",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Medical Loan",
+        "loan_status": "Approved",
+        "date": "2026-07-18"
+      },
+      "phone_number": "8188957986"
+    },
+    {
+      "customer_id": "CUST062",
+      "name": "Rashmi Iyer",
+      "account_number": "4000000045379474",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Purchase",
+        "loan_status": "Pending",
+        "date": "2026-07-22"
+      },
+      "phone_number": "7972774348"
+    },
+    {
+      "customer_id": "CUST063",
+      "name": "Sandeep More",
+      "account_number": "4000000046111401",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "New Car Loan",
+        "loan_status": "Rejected",
+        "date": "2026-07-26"
+      },
+      "phone_number": "8034714345"
+    },
+    {
+      "customer_id": "CUST064",
+      "name": "Ayesha Khan",
+      "account_number": "4000000046843328",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Higher Education Loan",
+        "loan_status": "Approved",
+        "date": "2026-07-23"
+      },
+      "phone_number": "8981223623"
+    },
+    {
+      "customer_id": "CUST065",
+      "name": "Nitin Sawant",
+      "account_number": "4000000047575255",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Working Capital Loan",
+        "loan_status": "Pending",
+        "date": "2026-07-27"
+      },
+      "phone_number": "9366587603"
+    },
+    {
+      "customer_id": "CUST066",
+      "name": "Juhi Mehta",
+      "account_number": "4000000048307182",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Wedding Loan",
+        "loan_status": "Rejected",
+        "date": "2026-07-31"
+      },
+      "phone_number": "8669096705"
+    },
+    {
+      "customer_id": "CUST067",
+      "name": "Deepak Yadav",
+      "account_number": "4000000049039109",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Construction",
+        "loan_status": "Approved",
+        "date": "2026-08-04"
+      },
+      "phone_number": "9066889373"
+    },
+    {
+      "customer_id": "CUST068",
+      "name": "Renu Mishra",
+      "account_number": "4000000049771036",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Used Car Loan",
+        "loan_status": "Pending",
+        "date": "2026-08-08"
+      },
+      "phone_number": "9967065627"
+    },
+    {
+      "customer_id": "CUST069",
+      "name": "Pranav Joshi",
+      "account_number": "4000000050502963",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Vocational Education Loan",
+        "loan_status": "Rejected",
+        "date": "2026-08-12"
+      },
+      "phone_number": "9598069901"
+    },
+    {
+      "customer_id": "CUST070",
+      "name": "Shweta Patil",
+      "account_number": "4000000051234890",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Equipment Finance",
+        "loan_status": "Approved",
+        "date": "2026-08-16"
+      },
+      "phone_number": "8627204653"
+    },
+    {
+      "customer_id": "CUST071",
+      "name": "Ravi Kumar",
+      "account_number": "4000000051966817",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Travel Loan",
+        "loan_status": "Pending",
+        "date": "2026-08-13"
+      },
+      "phone_number": "8155646417"
+    },
+    {
+      "customer_id": "CUST072",
+      "name": "Poonam Rane",
+      "account_number": "4000000052698744",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Renovation",
+        "loan_status": "Rejected",
+        "date": "2026-08-17"
+      },
+      "phone_number": "9180531003"
+    },
+    {
+      "customer_id": "CUST073",
+      "name": "Aniket Pawar",
+      "account_number": "4000000053430671",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Two-Wheeler Loan",
+        "loan_status": "Approved",
+        "date": "2026-08-21"
+      },
+      "phone_number": "9709232719"
+    },
+    {
+      "customer_id": "CUST074",
+      "name": "Sonali Naik",
+      "account_number": "4000000054162598",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Study Abroad Loan",
+        "loan_status": "Pending",
+        "date": "2026-08-25"
+      },
+      "phone_number": "9774529912"
+    },
+    {
+      "customer_id": "CUST075",
+      "name": "Akshay Jadhav",
+      "account_number": "4000000054894525",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Expansion Loan",
+        "loan_status": "Rejected",
+        "date": "2026-08-29"
+      },
+      "phone_number": "9019049663"
+    },
+    {
+      "customer_id": "CUST076",
+      "name": "Alisha Fernandes",
+      "account_number": "4000000055626452",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Emergency Loan",
+        "loan_status": "Approved",
+        "date": "2026-09-02"
+      },
+      "phone_number": "9393149190"
+    },
+    {
+      "customer_id": "CUST077",
+      "name": "Saurav Das",
+      "account_number": "4000000056358379",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Loan Balance Transfer",
+        "loan_status": "Pending",
+        "date": "2026-09-06"
+      },
+      "phone_number": "8886518506"
+    },
+    {
+      "customer_id": "CUST078",
+      "name": "Kriti Agarwal",
+      "account_number": "4000000057090306",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Commercial Vehicle Loan",
+        "loan_status": "Rejected",
+        "date": "2026-09-03"
+      },
+      "phone_number": "8016572628"
+    },
+    {
+      "customer_id": "CUST079",
+      "name": "Varsha Reddy",
+      "account_number": "4000000057822233",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Professional Course Loan",
+        "loan_status": "Approved",
+        "date": "2026-09-07"
+      },
+      "phone_number": "9998776945"
+    },
+    {
+      "customer_id": "CUST080",
+      "name": "Abhinav Mishra",
+      "account_number": "4000000058554160",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Property Loan",
+        "loan_status": "Pending",
+        "date": "2026-09-11"
+      },
+      "phone_number": "9814737996"
+    },
+    {
+      "customer_id": "CUST081",
+      "name": "Naveen Pillai",
+      "account_number": "4000000059286087",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Medical Loan",
+        "loan_status": "Rejected",
+        "date": "2026-09-15"
+      },
+      "phone_number": "8907527354"
+    },
+    {
+      "customer_id": "CUST082",
+      "name": "Lavanya Rao",
+      "account_number": "4000000060018014",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Purchase",
+        "loan_status": "Approved",
+        "date": "2026-09-19"
+      },
+      "phone_number": "8949480831"
+    },
+    {
+      "customer_id": "CUST083",
+      "name": "Prakash Menon",
+      "account_number": "4000000060749941",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "New Car Loan",
+        "loan_status": "Pending",
+        "date": "2026-09-23"
+      },
+      "phone_number": "9867837770"
+    },
+    {
+      "customer_id": "CUST084",
+      "name": "Madhuri Deshpande",
+      "account_number": "4000000061481868",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Higher Education Loan",
+        "loan_status": "Rejected",
+        "date": "2026-09-27"
+      },
+      "phone_number": "9343634957"
+    },
+    {
+      "customer_id": "CUST085",
+      "name": "Rakesh Soni",
+      "account_number": "4000000062213795",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Working Capital Loan",
+        "loan_status": "Approved",
+        "date": "2026-09-24"
+      },
+      "phone_number": "7985685574"
+    },
+    {
+      "customer_id": "CUST086",
+      "name": "Payal Gupta",
+      "account_number": "4000000062945722",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Wedding Loan",
+        "loan_status": "Pending",
+        "date": "2026-09-28"
+      },
+      "phone_number": "9043135182"
+    },
+    {
+      "customer_id": "CUST087",
+      "name": "Ashwin Nair",
+      "account_number": "4000000063677649",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Construction",
+        "loan_status": "Rejected",
+        "date": "2026-10-02"
+      },
+      "phone_number": "9737498941"
+    },
+    {
+      "customer_id": "CUST088",
+      "name": "Deepa Sharma",
+      "account_number": "4000000064409576",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Used Car Loan",
+        "loan_status": "Approved",
+        "date": "2026-10-06"
+      },
+      "phone_number": "9743524082"
+    },
+    {
+      "customer_id": "CUST089",
+      "name": "Yogesh Patil",
+      "account_number": "4000000065141503",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Vocational Education Loan",
+        "loan_status": "Pending",
+        "date": "2026-10-10"
+      },
+      "phone_number": "9900842710"
+    },
+    {
+      "customer_id": "CUST090",
+      "name": "Namrata Singh",
+      "account_number": "4000000065873430",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Equipment Finance",
+        "loan_status": "Rejected",
+        "date": "2026-10-14"
+      },
+      "phone_number": "7847775204"
+    },
+    {
+      "customer_id": "CUST091",
+      "name": "Rajiv Bhat",
+      "account_number": "4000000066605357",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Travel Loan",
+        "loan_status": "Approved",
+        "date": "2026-10-18"
+      },
+      "phone_number": "8011671902"
+    },
+    {
+      "customer_id": "CUST092",
+      "name": "Anushka Roy",
+      "account_number": "4000000067337284",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Renovation",
+        "loan_status": "Pending",
+        "date": "2026-10-15"
+      },
+      "phone_number": "9594131869"
+    },
+    {
+      "customer_id": "CUST093",
+      "name": "Hemant Joshi",
+      "account_number": "4000000068069211",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Two-Wheeler Loan",
+        "loan_status": "Rejected",
+        "date": "2026-10-19"
+      },
+      "phone_number": "7793867749"
+    },
+    {
+      "customer_id": "CUST094",
+      "name": "Ritika Malhotra",
+      "account_number": "4000000068801138",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Study Abroad Loan",
+        "loan_status": "Approved",
+        "date": "2026-10-23"
+      },
+      "phone_number": "8649909133"
+    },
+    {
+      "customer_id": "CUST095",
+      "name": "Suraj Chavan",
+      "account_number": "4000000069533065",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Expansion Loan",
+        "loan_status": "Pending",
+        "date": "2026-10-27"
+      },
+      "phone_number": "9912328120"
+    },
+    {
+      "customer_id": "CUST096",
+      "name": "Gayatri Kulkarni",
+      "account_number": "4000000070264992",
+      "loan": {
+        "loan_type": "Personal",
+        "loan_subtype": "Emergency Loan",
+        "loan_status": "Rejected",
+        "date": "2026-10-31"
+      },
+      "phone_number": "8679740344"
+    },
+    {
+      "customer_id": "CUST097",
+      "name": "Maulik Shah",
+      "account_number": "4000000070996919",
+      "loan": {
+        "loan_type": "Home",
+        "loan_subtype": "Home Loan Balance Transfer",
+        "loan_status": "Approved",
+        "date": "2026-11-04"
+      },
+      "phone_number": "8113493618"
+    },
+    {
+      "customer_id": "CUST098",
+      "name": "Reshma Khan",
+      "account_number": "4000000071728846",
+      "loan": {
+        "loan_type": "Auto",
+        "loan_subtype": "Commercial Vehicle Loan",
+        "loan_status": "Pending",
+        "date": "2026-11-08"
+      },
+      "phone_number": "9824210249"
+    },
+    {
+      "customer_id": "CUST099",
+      "name": "Omkar Desai",
+      "account_number": "4000000072460773",
+      "loan": {
+        "loan_type": "Education",
+        "loan_subtype": "Professional Course Loan",
+        "loan_status": "Rejected",
+        "date": "2026-11-05"
+      },
+      "phone_number": "7847174648"
+    },
+    {
+      "customer_id": "CUST100",
+      "name": "Sonia Kapoor",
+      "account_number": "4000000073192700",
+      "loan": {
+        "loan_type": "Business",
+        "loan_subtype": "Business Property Loan",
+        "loan_status": "Approved",
+        "date": "2026-11-09"
+      },
+      "phone_number": "7977190659"
+    }
+  ]
+}

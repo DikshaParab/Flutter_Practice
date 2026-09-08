@@ -1,3 +1,4 @@
+import 'package:demo/pages/bank_loan_page.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/widgets/my_app_bar.dart';
 import 'package:demo/widgets/logout_button.dart';
@@ -64,14 +65,18 @@ class BankDashboardPage extends StatelessWidget {
                       );
                     },
                   ),
-                  // Add more cards here later, e.g.:
-                  // DashboardCard(
-                  //   title: 'Reports',
-                  //   subtitle: 'Generate monthly summaries',
-                  //   icon: Icons.bar_chart,
-                  //   color: Colors.green[700]!,
-                  //   onTap: () { ... },
-                  // ),
+                  DashboardCard(
+                    title: 'Loan Details',
+                    subtitle: 'Full customer & loan info with contact number',
+                    icon: Icons.folder_shared_outlined,
+                    color: Colors.purple[700]!,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BankLoanPage(username: username)),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

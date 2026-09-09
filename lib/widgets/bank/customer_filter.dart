@@ -201,7 +201,7 @@ class CustomerFilter extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        Text('Export', style: TextStyle(fontSize: _fontSize)),
+                        Text('Export Page', style: TextStyle(fontSize: _fontSize)),
                         SizedBox(width: 6),
                         Icon(Icons.download, size: 16),
                       ],

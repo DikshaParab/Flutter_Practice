@@ -21,11 +21,6 @@ class _HomePageState extends State<HomePage> {
 
   static const _statusOptions = ['All', 'Approved', 'Pending', 'Rejected'];
 
-  String _capitalizeFirstLetter(String value) {
-    if (value.isEmpty) return value;
-    return '${value[0].toUpperCase()}${value.substring(1)}';
-  }
-
   List<Map<String, dynamic>> _allCustomers = [];
   List<Map<String, dynamic>> _filterCustomers = [];
   DateTime? _fromDate;
@@ -169,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                         tooltip: 'Back to dashboard',
                       ),
                       Text(
-                        'Welcome, ${_capitalizeFirstLetter(widget.username)}!',
+                        'Customer Transactions',
                         style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                     ],

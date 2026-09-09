@@ -128,6 +128,7 @@ class _BankLoanPageState extends State<BankLoanPage>{
               const SizedBox(height: 10),
               LoanSearchBar(controller: _searchController, onSearch: _search, onClear: _clearSearch),
               const Divider(height: 8),
+
               if(_hasSearched && _error != null)
                 Padding(
                   padding: const EdgeInsets.all(24),
@@ -136,11 +137,25 @@ class _BankLoanPageState extends State<BankLoanPage>{
                     style: TextStyle(color: Colors.red[700],fontSize: 15),
                   ),
                 ),
+
               if (_selectedCustomer != null) ...[
                 LoanSummaryBar(customer: _selectedCustomer!),
                 Expanded(
                   child: SingleChildScrollView(
-                    child: LoanDetailPanel(customer: _selectedCustomer!),
+                    child: LoanDetailPanel(
+                      customer: _selectedCustomer!, 
+                      onSaved: (updatedCustomer){
+                        setState(() {
+                          _selectedCustomer = updatedCustomer;
+                          final index = _allCustomers.indexWhere(
+                            (c) => c['customer_id'] == updatedCustomer['customer_id'],
+                          );
+                          if(index != 1) {
+                            _allCustomers[index] = updatedCustomer;
+                          }
+                        });
+                      },
+                    ),
                   ),
                 )
               ] else if (!_hasSearched)

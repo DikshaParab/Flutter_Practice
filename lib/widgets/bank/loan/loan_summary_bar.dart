@@ -6,11 +6,10 @@ class LoanSummaryBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final loan = customer['loan'] as Map<String, dynamic>;
     final name = customer['name'] as String;
     final phone = customer['phone_number'] as String;
     final account = customer['account_number'] as String;
-    final status = loan['loan_status'] as String;
+    final status = customer['loan_status'] as String;
     final custId = customer['customer_id'] as String;
 
     const headers = [

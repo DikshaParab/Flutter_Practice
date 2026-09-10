@@ -29,20 +29,23 @@ class DashboardCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CircleAvatar(
-                radius: 24,
-                backgroundColor: color.withValues(alpha: 0.15),
-                child: Icon(icon, color: color, size: 26),
+              Align(
+                alignment: Alignment.center,
+                child: CircleAvatar(
+                  radius: 37,
+                  backgroundColor: color.withValues(alpha: 0.15),
+                  child: Icon(icon, color: color, size: 30),
+                ),
               ),
               const SizedBox(height: 16),
               Text(
                 title,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 6),
               Text(
                 subtitle,
-                style: TextStyle(fontSize: 13, color: Colors.grey[600]),
+                style: TextStyle(fontSize: 15, color: Colors.grey[600]),
               ),
             ],
           ),

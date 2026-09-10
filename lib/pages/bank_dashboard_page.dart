@@ -43,41 +43,47 @@ class BankDashboardPage extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Expanded(
-              child: GridView(
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 260,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
-                  childAspectRatio: 1.2,
+              child: Center(
+                child: Wrap(
+                  spacing: 30,
+                  runSpacing: 24,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    SizedBox( 
+                      height: 230, width: 300,
+                      child:DashboardCard(
+                        title: 'Customer Records',
+                        subtitle: 'View and filter loan applications',
+                        icon: Icons.people_outline,
+                        color: Colors.blue[700]!,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomePage(username: username),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+
+                    SizedBox(
+                      width: 300, height: 230,
+                      child: DashboardCard(
+                        title: 'Loan Details',
+                        subtitle: 'Full customer & loan info with contact number',
+                        icon: Icons.folder_shared_outlined,
+                        color: Colors.purple[700]!,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => BankLoanPage(username: username)),
+                          );
+                        },
+                      ),
+                    )
+                  ],
                 ),
-                children: [
-                  DashboardCard(
-                    title: 'Customer Records',
-                    subtitle: 'View and filter loan applications',
-                    icon: Icons.people_outline,
-                    color: Colors.blue[700]!,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => HomePage(username: username),
-                        ),
-                      );
-                    },
-                  ),
-                  DashboardCard(
-                    title: 'Loan Details',
-                    subtitle: 'Full customer & loan info with contact number',
-                    icon: Icons.folder_shared_outlined,
-                    color: Colors.purple[700]!,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => BankLoanPage(username: username)),
-                      );
-                    },
-                  ),
-                ],
               ),
             ),
           ],

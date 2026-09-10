@@ -11,7 +11,7 @@ class RemarksField extends StatelessWidget{
       children: [
         const Text('Remarks', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
         const SizedBox(height: 6),
-        TextField(
+        TextFormField(
           controller: controller,
           maxLines: 3,
           decoration: const InputDecoration(
@@ -19,6 +19,12 @@ class RemarksField extends StatelessWidget{
             hintText: 'Add remarks about this loan application',
             contentPadding: EdgeInsets.all(12),
           ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter remarks!';
+            }
+            return null;
+          },
         )
       ],
     );

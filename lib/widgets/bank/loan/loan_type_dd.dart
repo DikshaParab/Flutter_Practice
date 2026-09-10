@@ -31,6 +31,12 @@ class LoanTypeDd extends StatelessWidget{
             contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           ), items: items.map((v) => DropdownMenuItem(value: v, child: Text(v))).toList(),
           onChanged: onChanged,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please select a loan type';
+            }
+            return null;
+          },
         )
       ],
     );

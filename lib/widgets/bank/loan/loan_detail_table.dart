@@ -7,6 +7,7 @@ import 'package:demo/widgets/bank/loan/loan_status_dd.dart';
 import 'package:demo/widgets/bank/loan/loan_status_updated.dart';
 import 'package:demo/widgets/bank/loan/remarks_field.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:demo/widgets/bank/loan/loan_updated_summary_table.dart';
 
 class LoanDetailPanel extends StatefulWidget {
   const LoanDetailPanel({super.key, required this.customer, required this.onSaved});
@@ -18,6 +19,8 @@ class LoanDetailPanel extends StatefulWidget {
 }
 
 class _LoanDetailPanelState extends State<LoanDetailPanel>{
+  Map<String, dynamic>? _lastSavedCustomer;
+  final _formKey = GlobalKey<FormState>();
   static const _statusOptions = ['Approved', 'Pending', 'Rejected'];
 
   List<LoanTypeOption> _loanTypes = [];
@@ -105,17 +108,22 @@ class _LoanDetailPanelState extends State<LoanDetailPanel>{
       if (!mounted) return;
 
       _originalStatus = _selectedStatus;
-      widget.onSaved({...widget.customer, ...edit});
+      final updatedCustomer = {...widget.customer, ...edit};
+      widget.onSaved(updatedCustomer);
+
+      setState(() {
+        _lastSavedCustomer = updatedCustomer;
+      });
 
       Fluttertoast.showToast(
         msg: 'Loan details updated.',
-        toastLength: Toast.LENGTH_SHORT,
+        toastLength: Toast.LENGTH_LONG,
       );
     } catch (e) {
       if (mounted) {
         Fluttertoast.showToast(
           msg: 'Failed to save changes. Please try again.',
-          toastLength: Toast.LENGTH_SHORT,
+          toastLength: Toast.LENGTH_LONG,
         );
       }
     } finally {
@@ -141,83 +149,92 @@ class _LoanDetailPanelState extends State<LoanDetailPanel>{
 
     return Padding(
       padding: const EdgeInsets.all(24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const Text('Loan Details', style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
-          const SizedBox(height: 20),
+      child: Form(
+        key: _formKey,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Text('Loan Details', style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
+            const SizedBox(height: 20),
 
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: LoanTypeDd(
-                  value: _selectedType,
-                  items: _loanTypes.map((t) => t.name).toList(),
-                  onChanged: (value) {
-                    if (value == null) return;
-                    setState(() {
-                      _selectedType = value;
-                      final newSubtypes = _loanTypes.firstWhere((t) => t.name == value).subtypes;
-                      _selectedSubType = newSubtypes.isNotEmpty ? newSubtypes.first.name : '';
-                    });
-                  },
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: LoanTypeDd(
+                    value: _selectedType,
+                    items: _loanTypes.map((t) => t.name).toList(),
+                    onChanged: (value) {
+                      if (value == null) return;
+                      setState(() {
+                        _selectedType = value;
+                        final newSubtypes = _loanTypes.firstWhere((t) => t.name == value).subtypes;
+                        _selectedSubType = newSubtypes.isNotEmpty ? newSubtypes.first.name : '';
+                      });
+                    },
+                  ),
                 ),
-              ),
-              const SizedBox(width: 24),
-              Expanded(
-                child: LoanSubtypeDd(
-                  value: safesubtype,
-                  items: subtypeNames,
-                  onChanged: (value) {
-                    if (value == null) return;
-                    setState(() => _selectedSubType = value);
-                  },
+                const SizedBox(width: 24),
+                Expanded(
+                  child: LoanSubtypeDd(
+                    value: safesubtype,
+                    items: subtypeNames,
+                    onChanged: (value) {
+                      if (value == null) return;
+                      setState(() => _selectedSubType = value);
+                    },
+                  ),
                 ),
-              ),
-              const SizedBox(width: 24),
-              Expanded(
-                child: LoanStatusDropdown(
-                  value: _selectedStatus,
-                  items: _statusOptions,
-                  onChanged: (value) {
-                    if (value == null) return;
-                    setState(() => _selectedStatus = value);
-                  },
+                const SizedBox(width: 24),
+                Expanded(
+                  child: LoanStatusDropdown(
+                    value: _selectedStatus,
+                    items: _statusOptions,
+                    onChanged: (value) {
+                      if (value == null) return;
+                      setState(() => _selectedStatus = value);
+                    },
+                  ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 24),
-
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: StatusUpdatedField(value: _statusUpdatedDate)),
-              const SizedBox(width: 24),
-              Expanded(flex: 2, child: RemarksField(controller: _remarksController)),
-            ],
-          ),
-          const SizedBox(height: 24),
-
-          Align(
-            alignment: Alignment.centerLeft,
-            child: ElevatedButton(
-              onPressed: _isSaving ? null : _handleSave,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue[700],
-                foregroundColor: Colors.white,
-              ),
-              child: _isSaving ? const SizedBox(
-                width: 18, height: 18,
-                child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-              )
-              :const Text('Save Changes'),
+              ],
             ),
-          ),
-        ],
-      ),
-    );
+            const SizedBox(height: 24),
+
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(child: StatusUpdatedField(value: _statusUpdatedDate)),
+                const SizedBox(width: 24),
+                Expanded(flex: 2, child: RemarksField(controller: _remarksController)),
+              ],
+            ),
+            const SizedBox(height: 24),
+
+            Align(
+              alignment: Alignment.centerLeft,
+              child: ElevatedButton(
+                onPressed: _isSaving ? null : _handleSave,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue[700],
+                  foregroundColor: Colors.white,
+                ),
+                child: _isSaving ? const SizedBox(
+                  width: 18, height: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                )
+                :const Text('Save Changes'),
+              ),
+            ),
+            
+            if (_lastSavedCustomer != null) ...[
+              const SizedBox(height: 24),
+              LoanUpdatedSummaryTable(customer: _lastSavedCustomer!),
+            ],
+          ],
+        ),
+      )
+    );  
   }
 }
 

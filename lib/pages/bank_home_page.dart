@@ -4,9 +4,9 @@ import 'package:demo/widgets/logout_button.dart';
 import 'package:demo/services/customer_service.dart';
 import 'package:demo/pages/login_page.dart';
 import 'package:demo/services/excel_export_service.dart';
-import 'package:demo/widgets/bank/customer_filter.dart';
-import 'package:demo/widgets/bank/customer_table.dart';
-import 'package:demo/widgets/bank/pagination_controls.dart';
+import 'package:demo/widgets/bank/customers/customer_filter.dart';
+import 'package:demo/widgets/bank/customers/customer_table.dart';
+import 'package:demo/widgets/bank/customers/pagination_controls.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.username});

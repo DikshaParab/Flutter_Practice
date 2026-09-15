@@ -81,7 +81,23 @@ class BankDashboardPage extends StatelessWidget {
                           );
                         },
                       ),
-                    )
+                    ),
+
+                    SizedBox(
+                      width: 300, height: 230,
+                      child: DashboardCard(
+                        title: 'FASTag',
+                        subtitle: 'Full customer & loan info with contact number',
+                        icon: Icons.folder_shared_outlined,
+                        color: Colors.purple[700]!,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => BankLoanPage(username: username)),
+                          );
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ),

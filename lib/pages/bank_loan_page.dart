@@ -165,7 +165,8 @@ class _BankLoanPageState extends State<BankLoanPage>{
                       'Search a Customer ID or Account Number to view loan details.',
                       style: TextStyle(color: Colors.grey, fontSize: 14),
                     ),
-                  ))
+                  )
+                )
             ],
         )
     );

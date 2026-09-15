@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:demo/utils/breakpoint.dart';
 
 class UsernameField extends StatelessWidget {
   const UsernameField({super.key, required this.controller});
@@ -7,7 +8,7 @@ class UsernameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 500,
+      width: Breakpoint.isMobile(context) ? double.infinity: 500,
       child: TextFormField(
         controller: controller,
         decoration: const InputDecoration(

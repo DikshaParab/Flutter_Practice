@@ -150,7 +150,7 @@ class _BankLoanPageState extends State<BankLoanPage>{
                           final index = _allCustomers.indexWhere(
                             (c) => c['customer_id'] == updatedCustomer['customer_id'],
                           );
-                          if(index != 1) {
+                          if(index != -1) {
                             _allCustomers[index] = updatedCustomer;
                           }
                         });

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:demo/utils/breakpoint.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({required this.title, this.action, super.key});
@@ -9,7 +10,9 @@ class MyAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 56,
-      padding: const EdgeInsets.symmetric(horizontal: 100),
+      padding: EdgeInsets.symmetric(
+        horizontal: Breakpoint.isMobile(context) ? 16 : 100,
+      ),
       decoration: BoxDecoration(color: Colors.blue[900]),
       child: Row(
         children: [

@@ -44,16 +44,20 @@ class CustomerFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Row 1: Customer ID, Loan Status, From Date, To Date
-          Row(
-            children: [
-              Expanded(
-                child: SizedBox(
+    return Scrollbar(
+      thumbVisibility: true,
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Row 1: Customer ID, Loan Status, From Date, To Date
+            Wrap(
+              spacing: 20,
+              runSpacing: 10,
+              children: [
+                SizedBox(
+                  width: 260,
                   height: _fieldHeight,
                   child: TextField(
                     controller: customerIdController,
@@ -70,11 +74,9 @@ class CustomerFilter extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(width: 10),
 
-              Expanded(
-                child: SizedBox(
+                SizedBox(
+                  width: 260,
                   height: _fieldHeight,
                   child: DropdownButtonFormField<String>(
                     initialValue: selectedStatus,
@@ -94,11 +96,9 @@ class CustomerFilter extends StatelessWidget {
                     onChanged: onStatusChanges,
                   ),
                 ),
-              ),
-              const SizedBox(width: 10),
 
-              Expanded(
-                child: SizedBox(
+                SizedBox(
+                  width: 260,
                   height: _fieldHeight,
                   child: TextFormField(
                     key: ValueKey('from-$fromDate'),
@@ -120,11 +120,9 @@ class CustomerFilter extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(width: 10),
-
-              Expanded(
-                child: SizedBox(
+                
+                SizedBox(
+                  width: 260,
                   height: _fieldHeight,
                   child: TextFormField(
                     key: ValueKey('to-$toDate'),
@@ -145,16 +143,16 @@ class CustomerFilter extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
+              ],
+            ),
 
-          // Row 2: Search, Clear, Export, Export All
-          Row(
-            children: [
-              Expanded(
-                child: SizedBox(
+            // Row 2: Search, Clear, Export, Export All
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: [
+                SizedBox(
+                  width: 260,
                   height: _fieldHeight,
                   child: ElevatedButton(
                     onPressed: onSearch,
@@ -172,11 +170,9 @@ class CustomerFilter extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(width: 10),
 
-              Expanded(
-                child: SizedBox(
+                SizedBox(
+                  width: 260,
                   height: _fieldHeight,
                   child: OutlinedButton(
                     onPressed: onClear,
@@ -190,11 +186,9 @@ class CustomerFilter extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(width: 10),
-
-              Expanded(
-                child: SizedBox(
+              
+                SizedBox(
+                  width: 260,
                   height: _fieldHeight,
                   child: OutlinedButton(
                     onPressed: canExportPage ? onExportPage : null,
@@ -208,11 +202,9 @@ class CustomerFilter extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(width: 10),
 
-              Expanded(
-                child: SizedBox(
+                SizedBox(
+                  width: 260,
                   height: _fieldHeight,
                   child: OutlinedButton(
                     onPressed: canExportAll ? onExportAll : null,
@@ -226,10 +218,10 @@ class CustomerFilter extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

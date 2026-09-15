@@ -32,79 +32,87 @@ class BankDashboardPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Welcome, ${_capitalizeFirstLetter(username)}!',
-              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 24),
-            Expanded(
-              child: Center(
-                child: Wrap(
-                  spacing: 30,
-                  runSpacing: 24,
-                  alignment: WrapAlignment.center,
-                  children: [
-                    SizedBox( 
-                      height: 230, width: 300,
-                      child:DashboardCard(
-                        title: 'Customer Records',
-                        subtitle: 'View and filter loan applications',
-                        icon: Icons.people_outline,
-                        color: Colors.blue[700]!,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomePage(username: username),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints){
+            final cardWidth = constraints.maxWidth < 360 
+              ? constraints.maxWidth - 48
+              : 320.0;
 
-                    SizedBox(
-                      width: 300, height: 230,
-                      child: DashboardCard(
-                        title: 'Loan Details',
-                        subtitle: 'Full customer & loan info with contact number',
-                        icon: Icons.folder_shared_outlined,
-                        color: Colors.purple[700]!,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => BankLoanPage(username: username)),
-                          );
-                        },
-                      ),
-                    ),
+            return SingleChildScrollView(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Welcome, ${_capitalizeFirstLetter(username)}!',
+                    style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 24),
+                  Center(
+                    child: Wrap(
+                      spacing: 30,
+                      runSpacing: 24,
+                      alignment: WrapAlignment.center,
+                      children: [
+                        SizedBox( 
+                          height: 230, width: cardWidth,
+                          child:DashboardCard(
+                            title: 'Customer Records',
+                            subtitle: 'View and filter loan applications',
+                            icon: Icons.people_outline,
+                            color: Colors.blue[700]!,
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomePage(username: username),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
 
-                    SizedBox(
-                      width: 300, height: 230,
-                      child: DashboardCard(
-                        title: 'FASTag',
-                        subtitle: 'Full customer & loan info with contact number',
-                        icon: Icons.folder_shared_outlined,
-                        color: Colors.purple[700]!,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => BankLoanPage(username: username)),
-                          );
-                        },
-                      ),
-                    ),
-                  ],
-                ),
+                        SizedBox(
+                          width: cardWidth, height: 230,
+                          child: DashboardCard(
+                            title: 'Loan Details',
+                            subtitle: 'Full customer & loan info with contact number',
+                            icon: Icons.folder_shared_outlined,
+                            color: Colors.purple[700]!,
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => BankLoanPage(username: username)),
+                              );
+                            },
+                          ),
+                        ),
+
+                        SizedBox(
+                          width: cardWidth, height: 230,
+                          child: DashboardCard(
+                            title: 'FASTag',
+                            subtitle: 'Full customer & loan info with contact number',
+                            icon: Icons.folder_shared_outlined,
+                            color: Colors.purple[700]!,
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => BankLoanPage(username: username)),
+                              );
+                            },
+                          ),
+                        ),
+                      ]
+                    )
+                  )
+                ]
               ),
-            ),
-          ],
+            );
+          }
         ),
-      ),
+      )
     );
-  }
+  }         
 }

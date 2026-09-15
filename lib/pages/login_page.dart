@@ -48,71 +48,87 @@ class _LoginPageAppState extends State<LoginPageApp> {
     final isBank = _selectedRole == 'Bank';
 
     return Material(
-      child: Center(
-        child: Form(
-          key: _formKey,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              MyAppBar(title: const Text('')),
-              const SizedBox(height: 30),
-              const Text(
-                'Log In',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 30),
-              acc_type_dd.DropdownMenu(
-                items: const ['Bank', 'Customer'],
-                onChanged: (value) {
-                  setState(() {
-                    _selectedRole = value;
-                    if (value == 'Bank'){
-                      _captchaCode = generateCaptcha();
-                      _captchaController.clear();
-                    }
-                  });
-                },
-              ),
-              const SizedBox(height: 20),
+      child: SafeArea(
+        child: Column(
+          children: [
+            MyAppBar(title: const Text('')),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(24),
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 500),
+                    child: Form(
+                      key: _formKey,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          const SizedBox(height: 30),
+                          const Text(
+                            'Log In',
+                            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                          ),
+                            
+                          const SizedBox(height: 30),
+                          acc_type_dd.DropdownMenu(
+                            items: const ['Bank', 'Customer'],
+                            onChanged: (value) {
+                              setState(() {
+                                _selectedRole = value;
+                                if (value == 'Bank'){
+                                  _captchaCode = generateCaptcha();
+                                  _captchaController.clear();
+                                }
+                              });
+                            },
+                          ),
 
-              UsernameField(controller: _usernameController),
-              const SizedBox(height: 20),
+                          const SizedBox(height: 20),
 
-              PasswordField(controller: _passwordController),
-              const SizedBox(height: 20),
+                          UsernameField(controller: _usernameController),
+                          const SizedBox(height: 20),
 
-              if (isBank) ...[
-                SizedBox(
-                  width: 500,
-                  child: CaptchaField(
-                    code: _captchaCode, 
-                    controller: _captchaController, 
-                    onRefresh: _refreshCaptcha),
+                          PasswordField(controller: _passwordController),
+                          const SizedBox(height: 20),
+
+                          if (isBank) ...[
+                            SizedBox(
+                              width: 500,
+                              child: CaptchaField(
+                                code: _captchaCode, 
+                                controller: _captchaController, 
+                                onRefresh: _refreshCaptcha),
+                            ),
+                            const SizedBox(height: 15),
+                          ],
+                          Align(
+                            alignment: Alignment.center,
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const ForgotPasswordPage(),
+                                  ),
+                                );
+                              },
+                              child: const Text('Forgot password?'),
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+
+                          LoginButton(onPressed: _login),
+                        ],
+                      )
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 15),
-              ],
-              Align(
-                alignment: Alignment.center,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ForgotPasswordPage(),
-                      ),
-                    );
-                  },
-                  child: const Text('Forgot password?'),
-                ),
               ),
-              const SizedBox(height: 15),
-
-              LoginButton(onPressed: _login),
-            ],
-          ),
+            ),
+          ],
         ),
-      ),
+      ),  
     );
   }
 

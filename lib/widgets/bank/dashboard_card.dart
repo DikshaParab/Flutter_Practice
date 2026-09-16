@@ -32,7 +32,7 @@ class DashboardCard extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: CircleAvatar(
-                  radius: 37,
+                  radius: 25,
                   backgroundColor: color.withValues(alpha: 0.15),
                   child: Icon(icon, color: color, size: 30),
                 ),
@@ -40,12 +40,12 @@ class DashboardCard extends StatelessWidget {
               const SizedBox(height: 16),
               Text(
                 title,
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 6),
               Text(
                 subtitle,
-                style: TextStyle(fontSize: 15, color: Colors.grey[600]),
+                style: TextStyle(fontSize: 14, color: Colors.grey[600]),
               ),
             ],
           ),

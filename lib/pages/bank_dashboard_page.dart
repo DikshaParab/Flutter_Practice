@@ -35,9 +35,9 @@ class BankDashboardPage extends StatelessWidget {
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints){
-            final cardWidth = constraints.maxWidth < 360 
+            final cardWidth = constraints.maxWidth < 320 
               ? constraints.maxWidth - 48
-              : 320.0;
+              : 300.0;
 
             return SingleChildScrollView(
               padding: const EdgeInsets.all(24),
@@ -51,12 +51,12 @@ class BankDashboardPage extends StatelessWidget {
                   const SizedBox(height: 24),
                   Center(
                     child: Wrap(
-                      spacing: 30,
-                      runSpacing: 24,
+                      spacing: 20,
+                      runSpacing: 14,
                       alignment: WrapAlignment.center,
                       children: [
                         SizedBox( 
-                          height: 230, width: cardWidth,
+                          height: 200, width: cardWidth,
                           child:DashboardCard(
                             title: 'Customer Records',
                             subtitle: 'View and filter loan applications',
@@ -74,7 +74,7 @@ class BankDashboardPage extends StatelessWidget {
                         ),
 
                         SizedBox(
-                          width: cardWidth, height: 230,
+                          width: cardWidth, height: 200,
                           child: DashboardCard(
                             title: 'Loan Details',
                             subtitle: 'Full customer & loan info with contact number',
@@ -90,7 +90,7 @@ class BankDashboardPage extends StatelessWidget {
                         ),
 
                         SizedBox(
-                          width: cardWidth, height: 230,
+                          width: cardWidth, height: 200,
                           child: DashboardCard(
                             title: 'FASTag',
                             subtitle: 'Full customer & loan info with contact number',

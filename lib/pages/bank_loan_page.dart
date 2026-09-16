@@ -6,6 +6,7 @@ import 'package:demo/widgets/bank/loan/loan_search_bar.dart';
 import 'package:demo/widgets/bank/loan/loan_detail_table.dart';
 import 'package:demo/widgets/bank/loan/loan_summary_bar.dart';
 import 'package:demo/services/loan_detail_service.dart';
+import 'package:flutter/rendering.dart';
 
 class BankLoanPage extends StatefulWidget {
   const BankLoanPage({super.key, required this.username});
@@ -103,71 +104,93 @@ class _BankLoanPageState extends State<BankLoanPage>{
       ),
       body: _isLoading
         ? const Center(child: CircularProgressIndicator())
-        : Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                child: Row(
+        : SafeArea(
+            child: LayoutBuilder(
+              builder: (context, constraints){
+                final isNarrow = constraints.maxWidth < 720;
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+
                   children: [
-                    IconButton(
-                      onPressed: () => Navigator.pop(context), 
-                      icon: const Icon(Icons.arrow_back),
-                      tooltip: 'Back to dashboard',
-                    ),
-                    Text(
-                      'Service Request Details',
-                      style: const TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () => Navigator.pop(context), 
+                            icon: const Icon(Icons.arrow_back),
+                            tooltip: 'Back to dashboard',
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Service Request Details',
+                              style: const TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )
+                        ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 10),
-              LoanSearchBar(controller: _searchController, onSearch: _search, onClear: _clearSearch),
-              const Divider(height: 8),
-
-              if(_hasSearched && _error != null)
-                Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Text(
-                    _error!,
-                    style: TextStyle(color: Colors.red[700],fontSize: 15),
-                  ),
-                ),
-
-              if (_selectedCustomer != null) ...[
-                LoanSummaryBar(customer: _selectedCustomer!),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: LoanDetailPanel(
-                      customer: _selectedCustomer!, 
-                      onSaved: (updatedCustomer){
-                        setState(() {
-                          _selectedCustomer = updatedCustomer;
-                          final index = _allCustomers.indexWhere(
-                            (c) => c['customer_id'] == updatedCustomer['customer_id'],
-                          );
-                          if(index != -1) {
-                            _allCustomers[index] = updatedCustomer;
-                          }
-                        });
-                      },
+                    const SizedBox(height: 10),
+                    LoanSearchBar(
+                      controller: _searchController, 
+                      onSearch: _search, 
+                      onClear: _clearSearch,
+                      isNarrow: isNarrow,
                     ),
-                  ),
-                )
-              ] else if (!_hasSearched)
-                const Expanded(
-                  child: Center(
-                    child: Text(
-                      'Search a Customer ID or Account Number to view loan details.',
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
-                    ),
-                  )
-                )
-            ],
+                    const Divider(height: 8),
+
+                    if(_hasSearched && _error != null)
+                      Padding(
+                        padding: const EdgeInsets.all(24),
+                        child: Text(
+                          _error!,
+                          style: TextStyle(color: Colors.red[700],fontSize: 15),
+                        ),
+                      ),
+
+                    if (_selectedCustomer != null) ...[
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: SizedBox(
+                          width: isNarrow ? 700 : constraints.maxWidth,
+                          child: LoanSummaryBar(customer: _selectedCustomer!),
+                        ),
+                      ),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: LoanDetailPanel(
+                            customer: _selectedCustomer!, 
+                            onSaved: (updatedCustomer){
+                              setState(() {
+                                _selectedCustomer = updatedCustomer;
+                                final index = _allCustomers.indexWhere(
+                                  (c) => c['customer_id'] == updatedCustomer['customer_id'],
+                                );
+                                if(index != -1) {
+                                  _allCustomers[index] = updatedCustomer;
+                                }
+                              });
+                            },
+                          ),
+                        ),
+                      )
+                    ] else if (!_hasSearched)
+                      const Expanded(
+                        child: Center(
+                          child: Text(
+                            'Search a Customer ID or Account Number to view loan details.',
+                            style: TextStyle(color: Colors.grey, fontSize: 14),
+                          ),
+                        )
+                      )
+                  ]
+                );
+              }
+            ),
         )
     );
   }

@@ -10,9 +10,10 @@
   import 'package:demo/widgets/bank/loan/loan_updated_summary_table.dart';
 
   class LoanDetailPanel extends StatefulWidget {
-    const LoanDetailPanel({super.key, required this.customer, required this.onSaved});
+    const LoanDetailPanel({super.key, required this.customer, required this.onSaved, this.isNarrow = false});
     final Map<String, dynamic> customer;
     final ValueChanged<Map<String, dynamic>> onSaved;
+    final bool isNarrow; 
 
     @override 
     State<LoanDetailPanel> createState() => _LoanDetailPanelState();
@@ -155,6 +156,41 @@
         ? _selectedSubType
         : (subtypeNames.isNotEmpty ? subtypeNames.first: null);
 
+      final typeDd = LoanTypeDd(
+        value: _selectedType,
+        items: _loanTypes.map((t) => t.name).toList(),
+        onChanged: (value) {
+          if (value == null) return;
+          setState(() {
+            _selectedType = value;
+            final newSubtypes = _loanTypes.firstWhere((t) => t.name == value).subtypes;
+            _selectedSubType = newSubtypes.isNotEmpty ? newSubtypes.first.name : '';
+          });
+        },
+      );
+
+      final subtypeDd = LoanSubtypeDd(
+        value: safesubtype,
+        items: subtypeNames,
+        onChanged: (value) {
+          if (value == null) return;
+          setState(() => _selectedSubType = value);
+        },
+      );
+
+      final statusDd = LoanStatusDropdown(
+        value: _selectedStatus,
+        items: _statusOptions,
+        onChanged: (value) {
+          if (value == null) return;
+          setState(() => _selectedStatus = value);
+        },
+      );
+
+      final statusUpdated = StatusUpdatedField(value: _statusUpdatedDate);
+
+      final remarks = RemarksField(controller: _remarksController);
+
       return Padding(
         padding: const EdgeInsets.all(24),
         child: Form(
@@ -166,58 +202,38 @@
               const Text('Loan Details', style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
               const SizedBox(height: 20),
 
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: LoanTypeDd(
-                      value: _selectedType,
-                      items: _loanTypes.map((t) => t.name).toList(),
-                      onChanged: (value) {
-                        if (value == null) return;
-                        setState(() {
-                          _selectedType = value;
-                          final newSubtypes = _loanTypes.firstWhere((t) => t.name == value).subtypes;
-                          _selectedSubType = newSubtypes.isNotEmpty ? newSubtypes.first.name : '';
-                        });
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 24),
-                  Expanded(
-                    child: LoanSubtypeDd(
-                      value: safesubtype,
-                      items: subtypeNames,
-                      onChanged: (value) {
-                        if (value == null) return;
-                        setState(() => _selectedSubType = value);
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 24),
-                  Expanded(
-                    child: LoanStatusDropdown(
-                      value: _selectedStatus,
-                      items: _statusOptions,
-                      onChanged: (value) {
-                        if (value == null) return;
-                        setState(() => _selectedStatus = value);
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 24),
-
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(child: StatusUpdatedField(value: _statusUpdatedDate)),
-                  const SizedBox(width: 24),
-                  Expanded(flex: 2, child: RemarksField(controller: _remarksController)),
-                ],
-              ),
-              const SizedBox(height: 24),
+              if (widget.isNarrow) ...[
+                typeDd,
+                const SizedBox(height: 20,),
+                subtypeDd,
+                const SizedBox(height: 20,),
+                statusDd,
+                const SizedBox(height: 20,),
+                statusUpdated,
+                const SizedBox(height: 20,),
+                remarks,
+                const SizedBox(height: 20,),
+              ] else ...[
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(child: typeDd),
+                    const SizedBox(width: 24,),
+                    Expanded(child: subtypeDd),
+                    const SizedBox(width: 24,),
+                    Expanded(child: statusDd),
+                  ],
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(child: statusUpdated),
+                    const SizedBox(width: 24,),
+                    Expanded(flex: 2, child: remarks),
+                  ],
+                ),
+              ],
+              const SizedBox(height: 24,),
 
               Align(
                 alignment: Alignment.centerLeft,
@@ -237,10 +253,13 @@
               
               if (_lastSavedCustomer != null) ...[
                 const SizedBox(height: 24),
-                SizedBox(
-                  width: double.infinity,
-                  child: LoanUpdatedSummaryTable(customer: _lastSavedCustomer!),
-                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: SizedBox(
+                    width: widget.isNarrow ? 900 : null,
+                    child: LoanUpdatedSummaryTable(customer: _lastSavedCustomer!),
+                  ),
+                )
               ],
             ],
           ),

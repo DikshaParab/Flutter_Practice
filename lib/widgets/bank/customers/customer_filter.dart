@@ -54,7 +54,7 @@ class CustomerFilter extends StatelessWidget {
             // Row 1: Customer ID, Loan Status, From Date, To Date
             Wrap(
               spacing: 20,
-              runSpacing: 10,
+              runSpacing: 20,
               children: [
                 SizedBox(
                   width: 260,
@@ -77,7 +77,7 @@ class CustomerFilter extends StatelessWidget {
 
                 SizedBox(
                   width: 260,
-                  height: _fieldHeight,
+                  height: 40.0,
                   child: DropdownButtonFormField<String>(
                     initialValue: selectedStatus,
                     isExpanded: true,
@@ -148,8 +148,8 @@ class CustomerFilter extends StatelessWidget {
 
             // Row 2: Search, Clear, Export, Export All
             Wrap(
-              spacing: 10,
-              runSpacing: 10,
+              spacing: 20,
+              runSpacing: 20,
               children: [
                 SizedBox(
                   width: 260,

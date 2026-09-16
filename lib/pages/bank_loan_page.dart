@@ -107,7 +107,7 @@ class _BankLoanPageState extends State<BankLoanPage>{
         : SafeArea(
             child: LayoutBuilder(
               builder: (context, constraints){
-                final isNarrow = constraints.maxWidth < 720;
+                final isNarrow = constraints.maxWidth < 730;
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
 
@@ -153,28 +153,34 @@ class _BankLoanPageState extends State<BankLoanPage>{
                       ),
 
                     if (_selectedCustomer != null) ...[
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: SizedBox(
-                          width: isNarrow ? 700 : constraints.maxWidth,
-                          child: LoanSummaryBar(customer: _selectedCustomer!),
-                        ),
-                      ),
                       Expanded(
                         child: SingleChildScrollView(
-                          child: LoanDetailPanel(
-                            customer: _selectedCustomer!, 
-                            onSaved: (updatedCustomer){
-                              setState(() {
-                                _selectedCustomer = updatedCustomer;
-                                final index = _allCustomers.indexWhere(
-                                  (c) => c['customer_id'] == updatedCustomer['customer_id'],
-                                );
-                                if(index != -1) {
-                                  _allCustomers[index] = updatedCustomer;
-                                }
-                              });
-                            },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: SizedBox(
+                                  width: isNarrow ? 700 : constraints.maxWidth,
+                                  child: LoanSummaryBar(customer: _selectedCustomer!),
+                                ),
+                              ),
+                              LoanDetailPanel(
+                                customer: _selectedCustomer!, 
+                                isNarrow: isNarrow,
+                                onSaved: (updatedCustomer){
+                                  setState(() {
+                                    _selectedCustomer = updatedCustomer;
+                                    final index = _allCustomers.indexWhere(
+                                      (c) => c['customer_id'] == updatedCustomer['customer_id'],
+                                    );
+                                    if(index != -1) {
+                                      _allCustomers[index] = updatedCustomer;
+                                    }
+                                  });
+                                },
+                              ),
+                            ],
                           ),
                         ),
                       )

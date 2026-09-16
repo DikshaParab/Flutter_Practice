@@ -44,13 +44,13 @@ class LoanUpdatedSummaryTable extends StatelessWidget{
         Table(
           border: TableBorder.all(color: Colors.grey[400]!),
           columnWidths: const {
-            0: FlexColumnWidth(1),   
+            0: FlexColumnWidth(1.2),   
             1: FlexColumnWidth(1.4), 
-            2: FlexColumnWidth(1.2), 
-            3: FlexColumnWidth(1.6), 
-            4: FlexColumnWidth(1.2), 
+            2: FlexColumnWidth(1.5), 
+            3: FlexColumnWidth(2.1), 
+            4: FlexColumnWidth(1.3), 
             5: FlexColumnWidth(1.6), 
-            6: FlexColumnWidth(1),   
+            6: FlexColumnWidth(1.3),   
             7: FlexColumnWidth(2),   
           },          
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,

@@ -19,12 +19,12 @@ class PasswordField extends StatelessWidget {
           if (value == null || value.trim().isEmpty) {
             return 'Please enter password';
           }
+          if (value.trim().length < 6) {
+            return 'Password must be at least 6 characters';
+          }
           if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$')
               .hasMatch(value)) {
             return 'Password must contain at least: \n-one uppercase letter, one lowercase letter, \n-one number, one special character';
-          }
-          if (value.trim().length < 6) {
-            return 'Password must be at least 6 characters';
           }
           return null;
         },

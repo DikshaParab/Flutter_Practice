@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomerTable extends StatelessWidget {
-  const CustomerTable({super.key, required this.customers});
+  const CustomerTable({super.key, required this.customers, this.isNarrow = false});
   final List<Map<String, dynamic>> customers;
+  final bool isNarrow;
 
   String _formatDate(DateTime date) {
     return '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
@@ -16,21 +17,19 @@ class CustomerTable extends StatelessWidget {
       );
     }
 
-    return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Table(
-        columnWidths: const {
-          0: FlexColumnWidth(1.2), // Customer ID
-          1: FlexColumnWidth(1.6), // Name
-          2: FlexColumnWidth(2), // Account Number
-          3: FlexColumnWidth(1.2), // Loan Status
-          4: FlexColumnWidth(1.2), // Date
-        },
-        border: TableBorder(
-          horizontalInside: BorderSide(color: Colors.grey[300]!),
-          verticalInside: BorderSide(color: Colors.grey[300]!),
-        ),
-        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+    final table = Table(
+      columnWidths: const {
+        0: FlexColumnWidth(1.2), // Customer ID
+        1: FlexColumnWidth(1.6), // Name
+        2: FlexColumnWidth(2), // Account Number
+        3: FlexColumnWidth(1.2), // Loan Status
+        4: FlexColumnWidth(1.2), // Date
+      },
+      border: TableBorder(
+        horizontalInside: BorderSide(color: Colors.grey[300]!),
+        verticalInside: BorderSide(color: Colors.grey[300]!),
+      ),
+      defaultVerticalAlignment: TableCellVerticalAlignment.middle,
         children: [
           const TableRow(
             decoration: BoxDecoration(
@@ -127,7 +126,17 @@ class CustomerTable extends StatelessWidget {
             );
           }),
         ],
-      ),
-    );
+      );
+
+      return SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: SizedBox(
+            width: isNarrow ? 700 : MediaQuery.of(context).size.width - 32,
+            child: table,
+          ),
+        ),
+      );
   }
 }

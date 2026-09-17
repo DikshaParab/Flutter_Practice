@@ -150,94 +150,94 @@ class _HomePageState extends State<HomePage> {
       ),
 
       body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () => Navigator.pop(context),
-                        icon: const Icon(Icons.arrow_back),
-                        tooltip: 'Back to dashboard',
-                      ),
-                      Text(
-                        'Customer Transactions',
-                        style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                      ),
-                    ],
+        ? const Center(child: CircularProgressIndicator())
+        : Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: const Icon(Icons.arrow_back),
+                      tooltip: 'Back to dashboard',
+                    ),
+                    Text(
+                      'Customer Transactions',
+                      style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              CustomerFilter(
+                customerIdController: _customerIDController,
+                fromDate: _fromDate,
+                toDate: _toDate,
+                selectedStatus: _selectedStatus,
+                statusOptions: _statusOptions,
+                onFromDateTap: _pickFromDate,
+                onToDateTap: _pickToDate,
+                onStatusChanges: (value) {
+                  setState(() {
+                    _selectedStatus = value;
+                  });
+                },
+                onSearch: _applyFilters,
+                onClear: _clearFilters,
+                canExportPage: _hasSearched && _pageCustomers.isNotEmpty,
+                canExportAll: _hasSearched && _filterCustomers.isNotEmpty,
+                onExportPage: () {
+                  ExcelExportService.exportCustomers(
+                    _pageCustomers,
+                    filename: 'page_customers.xlsx',
+                  );
+                },
+                onExportAll: () {
+                  ExcelExportService.exportCustomers(
+                    _filterCustomers,
+                    filename: 'all_customers.xlsx',
+                  );
+                },
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    _hasSearched
+                        ? 'Total records: ${_filterCustomers.length}'
+                        : '',
+                    style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ),
-                CustomerFilter(
-                  customerIdController: _customerIDController,
-                  fromDate: _fromDate,
-                  toDate: _toDate,
-                  selectedStatus: _selectedStatus,
-                  statusOptions: _statusOptions,
-                  onFromDateTap: _pickFromDate,
-                  onToDateTap: _pickToDate,
-                  onStatusChanges: (value) {
+              ),
+
+              const SizedBox(height: 8),
+              const Divider(height: 3),
+              Expanded(
+                child: _hasSearched
+                    ? CustomerTable(customers: _pageCustomers)
+                    : const SizedBox.shrink(),
+              ),
+              if (_hasSearched)
+                PaginationControls(
+                  currentPage: _currentPage,
+                  totalRecords: _filterCustomers.length,
+                  pageSize: _pageSize,
+                  onPrevious: () {
                     setState(() {
-                      _selectedStatus = value;
+                      _currentPage -= 1;
                     });
                   },
-                  onSearch: _applyFilters,
-                  onClear: _clearFilters,
-                  canExportPage: _hasSearched && _pageCustomers.isNotEmpty,
-                  canExportAll: _hasSearched && _filterCustomers.isNotEmpty,
-                  onExportPage: () {
-                    ExcelExportService.exportCustomers(
-                      _pageCustomers,
-                      filename: 'page_customers.xlsx',
-                    );
-                  },
-                  onExportAll: () {
-                    ExcelExportService.exportCustomers(
-                      _filterCustomers,
-                      filename: 'all_customers.xlsx',
-                    );
+                  onNext: () {
+                    setState(() {
+                      _currentPage += 1;
+                    });
                   },
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      _hasSearched
-                          ? 'Total records: ${_filterCustomers.length}'
-                          : '',
-                      style: const TextStyle(fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 8),
-                const Divider(height: 3),
-                Expanded(
-                  child: _hasSearched
-                      ? CustomerTable(customers: _pageCustomers)
-                      : const SizedBox.shrink(),
-                ),
-                if (_hasSearched)
-                  PaginationControls(
-                    currentPage: _currentPage,
-                    totalRecords: _filterCustomers.length,
-                    pageSize: _pageSize,
-                    onPrevious: () {
-                      setState(() {
-                        _currentPage -= 1;
-                      });
-                    },
-                    onNext: () {
-                      setState(() {
-                        _currentPage += 1;
-                      });
-                    },
-                  ),
-              ],
-            ),
+            ],
+          ),
     );
   }
 }

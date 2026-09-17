@@ -29,8 +29,9 @@ class PaginationControls extends StatelessWidget{
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        crossAxisAlignment: WrapCrossAlignment.center,
         children: [
           IconButton(
             onPressed: isFirstPage ? null: onPrevious, 
